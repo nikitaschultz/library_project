@@ -1,11 +1,13 @@
 MVP
-- CRUD functions for new books
-- Searching for books, listing by author, genre tag(?), series etc.
+- CRUD functions for books
+- Change read status of books
+- Searching for books, listing by author, genre, tag(?), series etc.
+- CRUD functions for book reviews
 
 Additional Functionality
 - "Recommend a book" - random book based on reviews and certain criteria that the user can select
 - "What should I read next" - random book based on "not read" status and certain criteria that the user can select
-- 
+- Potential yearly/monthly reading targets?
 
 Database Tables
 - Books
@@ -19,6 +21,8 @@ Database Tables
 
 JOIN Tables
 - Books + Authors (in case many authors)
+- Books + Series
+  (include column for number in series)
 
 
 * maybe unnecessary? review again later
