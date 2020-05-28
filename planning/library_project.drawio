@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-05-28T13:58:14.415Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36" etag="_hAjkh7qt9FhQV56hbT2" version="13.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-28T14:41:18.447Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36" etag="_rwyJHX5Xwp78zj6kfxM" version="13.1.1" type="github" pages="2">
   <diagram id="C1gPSxNjRX8TwCL8wa5-" name="Page-1">
-    <mxGraphModel dx="1186" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="946" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -87,6 +87,56 @@
         </mxCell>
         <mxCell id="-E4F1-Qg-gtL-6UCbbfH-17" value="+ CRUD functions&#xa;+ books: instance" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="-E4F1-Qg-gtL-6UCbbfH-14">
           <mxGeometry y="78" width="200" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="-E4F1-Qg-gtL-6UCbbfH-46" value="Class Diagrams" style="text;align=center;fontStyle=1;verticalAlign=top;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=none;fontSize=25;" vertex="1" parent="1">
+          <mxGeometry x="380" y="70" width="80" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Rm5c_qq7Kwh50CmvK04I" name="Page-2">
+    <mxGraphModel dx="1113" dy="733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="5vQVw6e9fJvFZ6SZHTXO-0" />
+        <mxCell id="5vQVw6e9fJvFZ6SZHTXO-1" parent="5vQVw6e9fJvFZ6SZHTXO-0" />
+        <mxCell id="SH11-9u39fR8o74BDJ0j-0" value="Use Case Diagram" style="text;align=center;fontStyle=1;verticalAlign=top;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=none;fontSize=25;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="385" y="70" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-0" value="Book Collection&lt;br&gt;Owner" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;fillColor=none;fontSize=25;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="100" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-3" value="" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=none;fontSize=25;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="670" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-4" value="Library" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=25;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="710" y="370" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-12" value="Add/delete books to and from the database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="260" y="130" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-13" value="" style="endArrow=classic;html=1;fontSize=25;" edge="1" parent="5vQVw6e9fJvFZ6SZHTXO-1" source="umE3kB2d1-_Bfy2kwvn5-0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="430" as="sourcePoint" />
+            <mxPoint x="660" y="303" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-14" value="Update the read status of books in the database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="150" width="470" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-15" value="Add a review for a book in the database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="170" width="470" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-16" value="Add/delete authors to and from the database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="190" width="470" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-17" value="Obtain a random book that&#39;s been reviewed" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="210" width="470" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-18" value="Obtain a random book that&#39;s unread" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="230" width="470" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="umE3kB2d1-_Bfy2kwvn5-19" value="Obtain lists of books by author, genre, series, read status etc.&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="5vQVw6e9fJvFZ6SZHTXO-1">
+          <mxGeometry x="190" y="250" width="470" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
