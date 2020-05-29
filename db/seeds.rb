@@ -1,6 +1,7 @@
 require('pry')
 require_relative('../models/genre')
 require_relative('../models/author')
+require_relative('../models/ownership_status')
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})
@@ -37,6 +38,17 @@ author6 = Author.new({"first_name" => "Alex", "last_name" => "North"})
 author6.save()
 author7 = Author.new({"first_name" => "Anne", "last_name" => "Griffin"})
 author7.save()
+
+####OWNERSHIP STATUS SEEDS
+ownershipstatus1 = OwnershipStatus.new({"name" => "Bookshelf"})
+ownershipstatus1.save()
+ownershipstatus2 = OwnershipStatus.new({"name" => "Wishlist"})
+ownershipstatus2.save()
+ownershipstatus3 = OwnershipStatus.new({"name" => "Borrowed"})
+ownershipstatus3.save()
+ownershipstatus4 = OwnershipStatus.new({"name" => "e-Book"})
+ownershipstatus4.save()
+
 
 binding.pry
 nil
