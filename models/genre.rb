@@ -11,7 +11,7 @@ class Genre
   end
 
   def Genre.all()
-    sql = "SELECT * FROM genres;"
+    sql = "SELECT * FROM genres"
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|genre_info| Genre.new(genre_info)}
   end
@@ -26,7 +26,8 @@ class Genre
   def save()
     sql = "INSERT INTO genres (name) VALUES ($1) RETURNING *"
     values = [@name]
-    SqlRunner.run(sql, values)
+    pg_result = SqlRunner.run(sql, values)
+    @id = pg_result[0]["id"].to_i
   end
 
   def delete()

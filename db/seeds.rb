@@ -1,4 +1,6 @@
+require('pry')
 require_relative('../models/genre')
+require_relative('../models/author')
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})
@@ -19,3 +21,22 @@ genre8 = Genre.new({"name" => "Classic"})
 genre8.save()
 genre9 = Genre.new({"name" => "Literary Fiction"})
 genre9.save()
+
+####AUTHOR SEEDS
+author1 = Author.new({"first_name" => "Patrick", "last_name" => "Rothfuss"})
+author1.save()
+author2 = Author.new({"first_name" => "Markus", "last_name" => "Zusak"})
+author2.save()
+author3 = Author.new({"first_name" => "C.J.", "last_name" => "Tudor"})
+author3.save()
+author4 = Author.new({"first_name" => "Richard", "last_name" => "Dawkins"})
+author4.save()
+author5 = Author.new({"first_name" => "Robert", "last_name" => "Galbraith"})
+author5.save()
+author6 = Author.new({"first_name" => "Alex", "last_name" => "North"})
+author6.save()
+author7 = Author.new({"first_name" => "Anne", "last_name" => "Griffin"})
+author7.save()
+
+binding.pry
+nil
