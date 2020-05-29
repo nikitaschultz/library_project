@@ -29,24 +29,23 @@ JOIN Tables
 TO DO
 X Create a database
 X Create database tables for all classes (SQL file)
-- Create test files for all classes
+X Create test files for all classes
   X genre
   X author
   X read status
   X ownership status
   X series
-  - book
-  - review
-- Create model files for all classes
-  X- genre
-  X- author
-  X- read status
-  X- ownership status
-  X- series
-  - book
-  - review
-- Create seeds file
-
+  X book
+  X review
+X Create model files for all classes
+  X genre
+  X author
+  X read status
+  X ownership status
+  X series
+  X book
+  X review
+X Create seeds file
 - Create database tables for tags/book-tag
 - Create test files
 - Create model files

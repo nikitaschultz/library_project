@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('book')
 
 class Author
 
@@ -45,6 +46,15 @@ class Author
     sql = "UPDATE authors SET (first_name, last_name) = ($1, $2) WHERE id = $3"
     values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def books()
+    sql = "SELECT books.* FROM
+    authors INNER JOIN books ON authors.id = books.author_id
+    WHERE authors.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return pg_result.map{|book_info| Book.new(book_info)}
   end
 
 end
