@@ -27,8 +27,27 @@ JOIN Tables
 * maybe unnecessary? review again later
 
 TO DO
-- Create a database
-- Create database tables for all classes (SQL file)
+X Create a database
+X Create database tables for all classes (SQL file)
 - Create test files for all classes
+  - genre
+  - author
+  - read status
+  - ownership status
+  - series
+  - book
+  - review
 - Create model files for all classes
+  - genre
+  - author
+  - read status
+  - ownership status
+  - series
+  - book
+  - review
 - Create seeds file
+
+- Create database tables for tags/book-tag
+- Create test files
+- Create model files
+- Amend seeds file
