@@ -3,6 +3,7 @@ require_relative('../models/genre')
 require_relative('../models/author')
 require_relative('../models/ownership_status')
 require_relative('../models/read_status')
+require_relative('../models/series')
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})
@@ -39,6 +40,8 @@ author6 = Author.new({"first_name" => "Alex", "last_name" => "North"})
 author6.save()
 author7 = Author.new({"first_name" => "Anne", "last_name" => "Griffin"})
 author7.save()
+author8 = Author.new({"first_name" => "Robin", "last_name" => "Hobb"})
+author8.save()
 
 ####OWNERSHIP STATUS SEEDS
 ownershipstatus1 = OwnershipStatus.new({"name" => "Bookshelf"})
@@ -59,6 +62,12 @@ readstatus3 = ReadStatus.new({"name" => "Abandoned"})
 readstatus3.save()
 readstatus4 = ReadStatus.new({"name" => "Not started"})
 readstatus4.save()
+
+####SERIES SEEDS
+series1 = Series.new({"name" => "Kingkiller Chronicles"})
+series1.save()
+series2 = Series.new({"name" => "Farseer Trilogy"})
+series2.save()
 
 
 binding.pry
