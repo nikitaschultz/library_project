@@ -5,6 +5,7 @@ require_relative('../models/ownership_status')
 require_relative('../models/read_status')
 require_relative('../models/series')
 require_relative('../models/book')
+require_relative('../models/review')
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})
@@ -105,6 +106,19 @@ book4 = Book.new({
   "ownership_status_id" => ownershipstatus4.id()
   })
 book4.save()
+
+review1 = Review.new({
+  "book_id" => book3.id(),
+  "rating" => 5,
+  "review" => "Life changing."
+  })
+review1.save()
+review2 = Review.new({
+  "book_id" => book4.id(),
+  "rating" => 5,
+  "review" => "Terrifying and very suspenseful!"
+  })
+review2.save()
 
 binding.pry
 nil

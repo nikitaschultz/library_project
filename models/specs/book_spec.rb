@@ -1,11 +1,6 @@
 require('minitest/autorun')
 require('minitest/reporters')
 require_relative('../book')
-require_relative('../genre')
-require_relative('../author')
-require_relative('../ownership_status')
-require_relative('../read_status')
-require_relative('../series')
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 class TestBook < MiniTest::Test

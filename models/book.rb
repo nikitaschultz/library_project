@@ -99,4 +99,19 @@ class Book
     return Series.new(pg_result[0])
   end
 
+  def review()
+    sql = "SELECT reviews.* FROM
+    books INNER JOIN reviews ON reviews.book_id = books.id
+    WHERE books.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    begin
+      review = Review.new(pg_result[0])
+    rescue
+      return nil
+    else
+      return review
+    end
+  end
+
 end
