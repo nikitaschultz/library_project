@@ -23,7 +23,8 @@ CREATE TABLE ownership_statuses (
 
 CREATE TABLE authors (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255) not null
+  first_name VARCHAR(255) not null,
+  last_name VARCHAR(255) not null
 );
 
 CREATE TABLE serieses (
