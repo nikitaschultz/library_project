@@ -30,18 +30,18 @@ TO DO
 X Create a database
 X Create database tables for all classes (SQL file)
 - Create test files for all classes
-  - genre
-  - author
+  X genre
+  X author
   - read status
-  - ownership status
+  X ownership status
   - series
   - book
   - review
 - Create model files for all classes
-  - genre
-  - author
+  X- genre
+  X- author
   - read status
-  - ownership status
+  X- ownership status
   - series
   - book
   - review
