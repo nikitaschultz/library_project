@@ -4,6 +4,7 @@ require_relative('../models/author')
 require_relative('../models/ownership_status')
 require_relative('../models/read_status')
 require_relative('../models/series')
+require_relative('../models/book')
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})
@@ -69,6 +70,41 @@ series1.save()
 series2 = Series.new({"name" => "Farseer Trilogy"})
 series2.save()
 
+####BOOK SEEDS
+book1 = Book.new({
+  "title" => "Assassin's Apprentice",
+  "author_id" => author8.id(),
+  "genre_id" => genre2.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus1.id(),
+  "series_id" => series2.id(),
+  "series_number" => 1
+  })
+book1.save()
+book2 = Book.new({
+  "title" => "The Book Thief",
+  "author_id" => author2.id(),
+  "genre_id" => genre9.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus1.id()
+  })
+book2.save()
+book3 = Book.new({
+  "title" => "When All Is Said",
+  "author_id" => author7.id(),
+  "genre_id" => genre9.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus3.id()
+  })
+book3.save()
+book4 = Book.new({
+  "title" => "The Whisper Man",
+  "author_id" => author6.id(),
+  "genre_id" => genre4.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus4.id()
+  })
+book4.save()
 
 binding.pry
 nil

@@ -29,11 +29,19 @@ class TestBook < MiniTest::Test
       "series_id" => @series1.id(),
       "series_number" => 1
       })
+    @book2 = Book.new({
+      "title" => "Stand-Alone",
+      "author_id" => @author1.id(),
+      "genre_id" => @genre1.id(),
+      "read_status_id" => @readstatus1.id(),
+      "ownership_status_id" => @ownership_status1.id()
+      })
   end
 
   def test_initialize_new_book()
     assert_equal("Assassin's Apprentice", @book1.title())
     assert_equal(1, @book1.series_number())
+    assert_equal("Stand-Alone", @book2.title())
   end
 
 end

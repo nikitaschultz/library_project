@@ -1,5 +1,9 @@
 require_relative('../db/sql_runner')
 require_relative('author')
+require_relative('genre')
+require_relative('read_status')
+require_relative('ownership_status')
+require_relative('series')
 
 class Book
 
@@ -59,19 +63,40 @@ class Book
   end
 
   def genre()
-
+    sql = "SELECT genres.* FROM
+    books INNER JOIN genres ON genres.id = books.genre_id
+    WHERE books.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return Genre.new(pg_result[0])
   end
 
   def read_status()
-
+    sql = "SELECT read_statuses.* FROM
+    books INNER JOIN read_statuses ON read_statuses.id = books.read_status_id
+    WHERE books.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return ReadStatus.new(pg_result[0])
   end
 
   def ownership_status()
-
+    sql = "SELECT ownership_statuses.* FROM
+    books INNER JOIN ownership_statuses ON ownership_statuses.id = books.ownership_status_id
+    WHERE books.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return OwnershipStatus.new(pg_result[0])
   end
 
   def series()
-
+    return nil if @series_id == nil
+    sql = "SELECT serieses.* FROM
+    books INNER JOIN serieses ON books.series_id = serieses.id
+    WHERE books.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return Series.new(pg_result[0])
   end
 
 end
