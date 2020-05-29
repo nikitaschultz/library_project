@@ -10,5 +10,24 @@ class Genre
     @name = options["name"]
   end
 
+  def Genre.all()
+
+  end
+
+  def Genre.find()
+
+  end
+
+  def save()
+
+  end
+
+  def delete()
+
+  end
+
+  def update()
+
+  end
 
 end
