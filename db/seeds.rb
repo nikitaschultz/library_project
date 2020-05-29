@@ -6,6 +6,16 @@ require_relative('../models/read_status')
 require_relative('../models/series')
 require_relative('../models/book')
 require_relative('../models/review')
+require_relative('../models/tag')
+
+Review.delete_all()
+Book.delete_all()
+Tag.delete_all()
+Genre.delete_all()
+Author.delete_all()
+OwnershipStatus.delete_all()
+ReadStatus.delete_all()
+Series.delete_all()
 
 ####GENRE SEEDS
 genre1 = Genre.new({"name" => "Crime"})

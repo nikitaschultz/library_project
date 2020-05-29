@@ -11,6 +11,11 @@ class Series
     @name = options["name"]
   end
 
+  def Series.delete_all()
+    sql = "DELETE FROM serieses"
+    SqlRunner.run(sql)
+  end
+
   def Series.all()
     sql = "SELECT * FROM serieses"
     pg_result = SqlRunner.run(sql)

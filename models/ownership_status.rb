@@ -11,6 +11,11 @@ class OwnershipStatus
     @name = options["name"]
   end
 
+  def OwnershipStatus.delete_all()
+    sql = "DELETE FROM ownership_statuses"
+    SqlRunner.run(sql)
+  end
+
   def OwnershipStatus.all()
     sql = "SELECT * FROM ownership_statuses"
     pg_result = SqlRunner.run(sql)

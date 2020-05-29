@@ -11,6 +11,11 @@ class ReadStatus
     @name = options["name"]
   end
 
+  def ReadStatus.delete_all()
+    sql = "DELETE FROM read_statuses"
+    SqlRunner.run(sql)
+  end
+
   def ReadStatus.all()
     sql = "SELECT * FROM read_statuses"
     pg_result = SqlRunner.run(sql)

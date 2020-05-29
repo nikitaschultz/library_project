@@ -21,6 +21,11 @@ class Book
     @series_number = options["series_number"]
   end
 
+  def Book.delete_all()
+    sql = "DELETE FROM books"
+    SqlRunner.run(sql)
+  end
+
   def Book.all()
     sql = "SELECT * FROM books"
     pg_result = SqlRunner.run(sql, values)

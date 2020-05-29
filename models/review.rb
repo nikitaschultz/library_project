@@ -13,6 +13,11 @@ class Review
     @review = options["review"]
   end
 
+  def Review.delete_all()
+    sql = "DELETE FROM reviews"
+    SqlRunner.run(sql)
+  end
+
   def Review.all()
     sql = "SELECT * FROM reviews"
     pg_result = SqlRunner.run(sql, values)

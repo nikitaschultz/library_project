@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS books_tags;
+DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS books;
 DROP TABLE IF EXISTS genres;
@@ -48,4 +50,15 @@ CREATE TABLE reviews (
   book_id INT REFERENCES books(id) ON DELETE CASCADE,
   review TEXT,
   rating INT
+);
+
+CREATE TABLE tags(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE books_tags(
+  id SERIAL PRIMARY KEY,
+  book_id INT REFERENCES books(id) ON DELETE CASCADE,
+  tag_id INT REFERENCES tags(id) ON DELETE CASCADE
 );

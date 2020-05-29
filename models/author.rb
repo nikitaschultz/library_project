@@ -12,8 +12,9 @@ class Author
     @last_name = options["last_name"]
   end
 
-  def full_name
-    return "#{@first_name} #{@last_name}"
+  def Author.delete_all()
+    sql = "DELETE FROM authors"
+    SqlRunner.run(sql)
   end
 
   def Author.all()
@@ -27,6 +28,10 @@ class Author
     values = [id]
     pg_result = SqlRunner.run(sql, values)
     return Author.new(pg_result[0])
+  end
+
+  def full_name
+    return "#{@first_name} #{@last_name}"
   end
 
   def save()

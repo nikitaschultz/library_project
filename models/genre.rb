@@ -11,6 +11,11 @@ class Genre
     @name = options["name"]
   end
 
+  def Genre.delete_all()
+    sql = "DELETE FROM genres"
+    SqlRunner.run(sql)
+  end
+
   def Genre.all()
     sql = "SELECT * FROM genres"
     pg_result = SqlRunner.run(sql)
