@@ -32,17 +32,17 @@ X Create database tables for all classes (SQL file)
 - Create test files for all classes
   X genre
   X author
-  - read status
+  X read status
   X ownership status
-  - series
+  X series
   - book
   - review
 - Create model files for all classes
   X- genre
   X- author
-  - read status
+  X- read status
   X- ownership status
-  - series
+  X- series
   - book
   - review
 - Create seeds file
