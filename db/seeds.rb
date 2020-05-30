@@ -139,7 +139,13 @@ tag2.save()
 
 book_tag1 = BookTag.new({"book_id" => book4.id(), "tag_id" => tag1.id()})
 book_tag1.save()
-book_tag2 = BookTag.new({"book_id" => book3.id(), "tag_id" => tag2.id})
+book_tag2 = BookTag.new({"book_id" => book3.id(), "tag_id" => tag2.id()})
+book_tag2.save()
+
+tag2_id_array = tag2.books().map{|book| book.id()}
+genre9_id_array = genre9.books().map{|book| book.id()}
+
+test = tag2_id_array & genre9_id_array
 
 binding.pry
 nil

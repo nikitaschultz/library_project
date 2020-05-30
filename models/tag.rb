@@ -47,4 +47,14 @@ class Tag
     SqlRunner.run(sql, values)
   end
 
+  def books
+    sql = "SELECT books.* FROM
+    tags INNER JOIN books_tags ON tags.id = books_tags.tag_id
+    INNER JOIN books ON books_tags.book_id = books.id
+    WHERE tags.id = $1"
+    values = [@id]
+    pg_result = SqlRunner.run(sql, values)
+    return pg_result.map{|book_info| Book.new(book_info)}
+  end
+
 end
