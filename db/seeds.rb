@@ -7,7 +7,9 @@ require_relative('../models/series')
 require_relative('../models/book')
 require_relative('../models/review')
 require_relative('../models/tag')
+require_relative('../models/book_tag')
 
+BookTag.delete_all()
 Review.delete_all()
 Book.delete_all()
 Tag.delete_all()
@@ -129,6 +131,15 @@ review2 = Review.new({
   "review" => "Terrifying and very suspenseful!"
   })
 review2.save()
+
+tag1 = Tag.new("name" => "Page-turner")
+tag1.save()
+tag2 = Tag.new("name" => "Twisty")
+tag2.save()
+
+book_tag1 = BookTag.new({"book_id" => book4.id(), "tag_id" => tag1.id()})
+book_tag1.save()
+book_tag2 = BookTag.new({"book_id" => book3.id(), "tag_id" => tag2.id})
 
 binding.pry
 nil

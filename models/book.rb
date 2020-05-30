@@ -59,49 +59,24 @@ class Book
   end
 
   def author()
-    sql = "SELECT authors.* FROM
-          books INNER JOIN authors ON authors.id = books.author_id
-          WHERE books.author_id = $1"
-    values = [@author_id]
-    pg_result = SqlRunner.run(sql, values)
-    return Author.new(pg_result[0])
+    return Author.find(@author_id)
   end
 
   def genre()
-    sql = "SELECT genres.* FROM
-    books INNER JOIN genres ON genres.id = books.genre_id
-    WHERE books.id = $1"
-    values = [@id]
-    pg_result = SqlRunner.run(sql, values)
-    return Genre.new(pg_result[0])
+    return Genre.find(@genre_id)
   end
 
   def read_status()
-    sql = "SELECT read_statuses.* FROM
-    books INNER JOIN read_statuses ON read_statuses.id = books.read_status_id
-    WHERE books.id = $1"
-    values = [@id]
-    pg_result = SqlRunner.run(sql, values)
-    return ReadStatus.new(pg_result[0])
+    return ReadStatus.find(@read_status_id)
   end
 
   def ownership_status()
-    sql = "SELECT ownership_statuses.* FROM
-    books INNER JOIN ownership_statuses ON ownership_statuses.id = books.ownership_status_id
-    WHERE books.id = $1"
-    values = [@id]
-    pg_result = SqlRunner.run(sql, values)
-    return OwnershipStatus.new(pg_result[0])
+    return OwnershipStatus.find(@ownership_status_id)
   end
 
   def series()
     return nil if @series_id == nil
-    sql = "SELECT serieses.* FROM
-    books INNER JOIN serieses ON books.series_id = serieses.id
-    WHERE books.id = $1"
-    values = [@id]
-    pg_result = SqlRunner.run(sql, values)
-    return Series.new(pg_result[0])
+    return Series.find(@series_id)
   end
 
   def review()
@@ -111,7 +86,7 @@ class Book
     values = [@id]
     pg_result = SqlRunner.run(sql, values)
     begin
-      review = Review.new(pg_result[0])
+      review = Review.find(pg_result[0])
     rescue
       return nil
     else
