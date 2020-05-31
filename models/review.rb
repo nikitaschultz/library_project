@@ -20,7 +20,7 @@ class Review
 
   def Review.all()
     sql = "SELECT * FROM reviews"
-    pg_result = SqlRunner.run(sql, values)
+    pg_result = SqlRunner.run(sql)
     return pg_result.map{|review_data| Review.new(review_data)}
   end
 

@@ -1,7 +1,7 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1><%= @title %></h1>
+    <h1>Books: <%= @author.full_name() %></h1>
     <% for book in @books %>
     <h2><%= book.title() %></h2>
     <h3><%= book.author().full_name %></h3>

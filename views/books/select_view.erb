@@ -1,0 +1,28 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Library</h1>
+    <h2>View books by:</h2>
+
+    <form action="/books/author" method="post">
+      <label for="author">Author:</label><br>
+      <select id="author" name="author_id">
+        <% for author in @authors %>
+        <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form><br>
+
+    <form action="/books/genre" method="post">
+      <label for="genre">Genre:</label><br>
+      <select id="genre" name="genre_id">
+        <% for genre in @genres %>
+        <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form>
+
+  </div>
+</div>
