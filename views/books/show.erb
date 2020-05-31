@@ -1,0 +1,34 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+<h1><%= @book.title() %></h1>
+<h2><%= @book.author().full_name() %></h2>
+
+<h3>Genre:</h3>
+<p><%= @book.genre().name() %></p>
+
+<h3>Series:</h3>
+<% if(@book.series() == nil) %>
+<p>N/A</p>
+<% else %>
+<p><%= @book.series().name() %> (<%= @book.series_number() %>)</p>
+<% end %>
+
+<h3>Ownership Status:</h3>
+<p><%= @book.ownership_status().name() %></p>
+
+<h3>Tags:</h3>
+<ul>
+  <% @book.tags().each do |tag| %>
+  <li><%= tag.name() %></li>
+  <% end %>
+</ul>
+
+<h3>Review:</h3>
+<% if(@book.review() == nil) %>
+<p>N/A</p>
+<% else %>
+<p><%= @book.review().rating() %> stars </p>
+<p>"<%= @book.review().review() %>"</p>
+<% end %>
+</div>
+</div>

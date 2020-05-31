@@ -4,6 +4,8 @@ require_relative('genre')
 require_relative('read_status')
 require_relative('ownership_status')
 require_relative('series')
+require_relative('tag')
+require_relative('review')
 
 class Book
 
@@ -86,7 +88,7 @@ class Book
     values = [@id]
     pg_result = SqlRunner.run(sql, values)
     begin
-      review = Review.find(pg_result[0])
+      review = Review.find(pg_result[0]["id"])
     rescue
       return nil
     else
