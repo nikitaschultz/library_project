@@ -1,6 +1,15 @@
 <div class = "pageview">
   <div class = "pagecontent">
-<h1><%= @author.full_name() %></h1>
-
-</div>
+    <h1><%= @author.full_name() %></h1>
+    <h2>Books:</h2>
+    <% for book in @author.books() %>
+    <h3><%= book.title() %>
+      <% if(book.series() != nil) %>
+      (<%= book.series().name() %> #<%= book.series_number() %>)
+      <% end %>
+    </h3>
+    <p><%= book.genre().name() %>, <%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
+    <hr />
+    <% end %>
+  </div>
 </div>

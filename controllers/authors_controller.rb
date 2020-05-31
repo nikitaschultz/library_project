@@ -5,12 +5,17 @@ also_reload('../models/*')
 
 get '/authors' do
   @authors = Author.all()
+  erb(:"authors/index")
 end
 
 post '/authors' do
   @author = Author.new(params)
   @author.save()
-  redirect request.referer
+  redirect("/authors/#{@author.id()}")
+end
+
+get '/authors/new' do
+  erb(:"authors/new")
 end
 
 get '/authors/:id' do
