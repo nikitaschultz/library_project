@@ -22,3 +22,9 @@ get '/serieses/:id' do
   @series = Series.find(params["id"])
   erb(:"serieses/show")
 end
+
+post '/serieses/:id/delete' do
+  @series = Series.find(params["id"])
+  @series.delete()
+  redirect('/serieses')
+end

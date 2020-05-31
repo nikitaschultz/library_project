@@ -22,3 +22,9 @@ get '/genres/:id' do
   @genre = Genre.find(params["id"])
   erb(:"genres/show")
 end
+
+post '/genres/:id/delete' do
+  @genre = Genre.find(params["id"])
+  @genre.delete()
+  redirect('/genres')
+end

@@ -18,7 +18,7 @@ class Author
   end
 
   def Author.all()
-    sql = "SELECT * FROM authors ORDER BY first_name" 
+    sql = "SELECT * FROM authors ORDER BY first_name"
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|author_info| Author.new(author_info)}
   end
@@ -44,7 +44,7 @@ class Author
   def delete()
     sql = "DELETE FROM authors WHERE id = $1"
     values = [@id]
-    SqlRunner.run(sql values)
+    SqlRunner.run(sql, values)
   end
 
   def update()

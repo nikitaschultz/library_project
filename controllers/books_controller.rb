@@ -58,6 +58,12 @@ get '/books/:id' do
   erb(:"books/show")
 end
 
+post '/books/:id/delete' do
+  @book = Book.find(params["id"])
+  @book.delete()
+  redirect('/books/view')
+end
+
 post '/books' do
   if params[:series_id] == "nill"
     params.delete("series_id")

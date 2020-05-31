@@ -30,5 +30,10 @@
 <p><%= @book.review().rating() %> stars </p>
 <p>"<%= @book.review().review() %>"</p>
 <% end %>
+
+<form action="/books/<%= @book.id() %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+
 </div>
 </div>
