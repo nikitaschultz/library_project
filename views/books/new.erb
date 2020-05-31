@@ -1,0 +1,74 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>New Book</h1>
+    <p>New author?  Add them to your collection below:</p>
+    <form action="/authors" method="post">
+      <label for="first_name">First Name:</label>
+      <input id="first_name" type="text" name="first_name">
+      <label for="last_name">Last Name:</label>
+      <input id="last_name" type="text" name="last_name">
+      <input type='submit' value="Add">
+    </form>
+
+    <p>New series?  Add it to your collection below:</p>
+    <form action="/serieses" method="post">
+      <label for="series_name">Series Name:</label>
+      <input id="series_name" type="text" name="series_name">
+      <input type='submit' value="Add">
+    </form>
+
+    <h2>Book details:</h2>
+    <form action="/books" method="post">
+
+      <label for="title">Title:</label><br>
+      <input id="title" type="text" name="title">
+      <br><br>
+
+      <label for="author">Author:</label><br>
+      <select id="author" name="author_id">
+        <% for author in @authors %>
+        <option value="<%= author.id() %>"><%= author.full_name() %></option>
+        <% end %>
+      </select><br><br>
+
+      <label for="genre">Genre:</label><br>
+      <select id="genre" name="genre_id">
+        <% for genre in @genres %>
+        <option value="<%= genre.id() %>"><%= genre.name() %></option>
+        <% end %>
+      </select><br><br>
+
+    <h2>Read status:</h2>
+    <label for="read_status"></label>
+    <select id="read_status" name="read_status_id">
+      <% for read_status in @read_statuses %>
+      <option value="<%= read_status.id() %>"><%= read_status.name() %></option>
+      <% end %>
+    </select><br><br>
+
+    <h2>Ownership status:</h2>
+    <label for="ownership_status"></label>
+    <select id="ownership_status" name="ownership_status_id">
+      <% for ownership_status in @ownership_statuses %>
+      <option value="<%= ownership_status.id() %>"><%= ownership_status.name() %></option>
+      <% end %>
+    </select><br><br>
+
+    <h2>Series details:</h2>
+    <label for="series_name">Series Name:</label>
+    <select id="series_name" name="series_id">
+      <option selected value="nill">N/A</option>
+      <% for series in @serieses %>
+      <option value="<%= series.id() %>"><%= series.name() %></option>
+      <% end %>
+    </select><br>
+    <label for="number_in_series">Number in Series:</label><br>
+    <input id="number_in_series" type="number" name="series_number">
+    <br><br>
+
+    <input type='submit' value="Create">
+
+  </form>
+  </div>
+</div>
