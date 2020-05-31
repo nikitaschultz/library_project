@@ -16,7 +16,7 @@ class Tag
   end
 
   def Tag.all()
-    sql = "SELECT * FROM tags"
+    sql = "SELECT * FROM tags ORDER BY name"
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|tag_info| Tag.new(tag_info)}
   end

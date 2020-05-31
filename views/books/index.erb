@@ -1,0 +1,13 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1><%= @ownership_status.name() %></h1>
+    <% for book in @books %>
+    <h2><%= book.title() %></h2>
+    <h3><%= book.author().full_name %></h3>
+    <a href="/books/<%= book.id() %>">View</a>
+    <hr />
+    <% end %>
+
+  </div>
+</div>

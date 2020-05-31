@@ -17,7 +17,7 @@ class Series
   end
 
   def Series.all()
-    sql = "SELECT * FROM serieses"
+    sql = "SELECT * FROM serieses ORDER BY name"
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|series_info| Series.new(series_info)}
   end

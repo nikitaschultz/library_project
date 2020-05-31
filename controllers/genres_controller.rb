@@ -1,0 +1,24 @@
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('../models/genre')
+also_reload('../models/*')
+
+get '/genres' do
+  @genres = Genre.all()
+  erb(:"genres/index")
+end
+
+get '/genres/new' do
+  erb(:"genres/new")
+end
+
+post '/genres' do
+  genre = Genre.new(params)
+  genre.save()
+  redirect(:"genres/#{genre.id()}")
+end
+
+get '/genres/:id' do
+  @genre = Genre.find(params["id"])
+  erb(:"genres/show")
+end

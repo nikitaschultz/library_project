@@ -1,0 +1,12 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Genres</h1>
+    <% for genre in @genres %>
+    <h2><%= genre.name() %></h2>
+    <a href="/genres/<%= genre.id() %>">View</a>
+    <hr />
+    <% end %>
+
+  </div>
+</div>

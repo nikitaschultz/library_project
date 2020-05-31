@@ -23,14 +23,21 @@ class Book
     @series_number = options["series_number"]
   end
 
+  def Book.includes(array1, array2)
+    id_array1 = array1.map{|book| book.id()}
+    id_array2 = array2.map{|book| book.id()}
+    new_array = id_array1 & id_array2
+    return new_array.map{|id| Book.find(id)}
+  end
+
   def Book.delete_all()
     sql = "DELETE FROM books"
     SqlRunner.run(sql)
   end
 
   def Book.all()
-    sql = "SELECT * FROM books"
-    pg_result = SqlRunner.run(sql, values)
+    sql = "SELECT * FROM books ORDER BY title"
+    pg_result = SqlRunner.run(sql)
     return pg_result.map{|book_info| Book.new(book_info)}
   end
 
@@ -105,5 +112,6 @@ class Book
     pg_result = SqlRunner.run(sql, values)
     return pg_result.map{|tag_info| Tag.new(tag_info)}
   end
+
 
 end

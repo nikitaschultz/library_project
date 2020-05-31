@@ -29,6 +29,13 @@ class OwnershipStatus
     return OwnershipStatus.new(pg_result[0])
   end
 
+  def OwnershipStatus.find_by_name(name)
+    sql = "SELECT * FROM ownership_statuses WHERE name = $1"
+    values = [name]
+    pg_result = SqlRunner.run(sql, values)
+    return OwnershipStatus.new(pg_result[0])
+  end
+
   def save()
     sql = "INSERT INTO ownership_statuses (name) VALUES ($1) RETURNING *"
     values = [@name]

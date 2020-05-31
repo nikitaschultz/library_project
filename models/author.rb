@@ -18,7 +18,7 @@ class Author
   end
 
   def Author.all()
-    sql = "SELECT * FROM authors"
+    sql = "SELECT * FROM authors ORDER BY first_name" 
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|author_info| Author.new(author_info)}
   end

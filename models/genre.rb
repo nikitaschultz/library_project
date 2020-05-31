@@ -17,7 +17,7 @@ class Genre
   end
 
   def Genre.all()
-    sql = "SELECT * FROM genres"
+    sql = "SELECT * FROM genres ORDER BY name"
     pg_result = SqlRunner.run(sql)
     return pg_result.map{|genre_info| Genre.new(genre_info)}
   end

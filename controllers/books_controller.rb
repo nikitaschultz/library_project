@@ -16,6 +16,12 @@ get '/books/new' do
   erb(:"books/new")
 end
 
+get '/books/view/:ownership_status_id' do
+  @ownership_status = OwnershipStatus.find(params["ownership_status_id"])
+  @books = Book.includes(Book.all(), @ownership_status.books())
+  erb(:"books/index")
+end
+
 get '/books/:id' do
   @book = Book.find(params["id"])
   erb(:"books/show")
