@@ -3,23 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>📚BookBank📚</title>
+    <link rel="stylesheet" href="/styles/site-structure.css">
   </head>
   <body>
     <main>
-      <nav>
-        <div>
+      <div class = "navigation-pane"
+        <nav>
+        <div class = "navigation-left">
           <ul>
             <li><a href="/books/new">New Book</a></li>
-            <li><a href="/books/select-view">Library</a></li>
+            <li><a href="/books/">Library</a></li>
             <li><a href="/books/wishlist">Wishlist</a></li>
+            <li><a href="/gimme/">Gimme!</a></li>
           </ul>
         </div>
-        <div>
+        <div class = "navigation-right">
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/admin">Admin</a></li>
           </ul>
-      </nav>
+        </div>
+        </nav>
+      </div>
     </main>
+    <%= yield %>
+    <div class="page-footer">
+      <p></p>
+    </div>
   </body>
 </html>

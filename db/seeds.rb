@@ -64,8 +64,6 @@ ownershipstatus2 = OwnershipStatus.new({"name" => "Wishlist"})
 ownershipstatus2.save()
 ownershipstatus3 = OwnershipStatus.new({"name" => "Borrowed"})
 ownershipstatus3.save()
-ownershipstatus4 = OwnershipStatus.new({"name" => "e-Book"})
-ownershipstatus4.save()
 
 ####READ STATUS SEEDS
 readstatus1 = ReadStatus.new({"name" => "Finished"})
@@ -115,7 +113,7 @@ book4 = Book.new({
   "author_id" => author6.id(),
   "genre_id" => genre4.id(),
   "read_status_id" => readstatus1.id(),
-  "ownership_status_id" => ownershipstatus4.id()
+  "ownership_status_id" => ownershipstatus1.id()
   })
 book4.save()
 

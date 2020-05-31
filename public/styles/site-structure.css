@@ -1,0 +1,78 @@
+body {
+  font-family: "Lucinda Console", Monaco, monospace;
+}
+
+.navigation-pane {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  background-color: coral;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  overflow: scroll;
+  width: 99%
+}
+
+.navigation-left ul {
+  display: flex;
+  flex: 1;
+  flex-direction: row,
+}
+
+.navigation-right ul {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px
+}
+
+li {
+  width: 80px;
+  margin: 10px;
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+}
+
+li a {
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  color: coral;
+  text-decoration: none;
+  width: 80px;
+}
+
+
+li:hover a:hover {
+  color: white;
+  text-decoration: none;
+  border: solid 1px white;
+  background-color: coral;
+  width: 80px;
+  text-align: center;
+}
+
+.page-footer p {
+  bottom: 0%;
+  background-color: coral;
+  overflow: hidden;
+  position: fixed;
+  height: 10px;
+  width: 99%;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
