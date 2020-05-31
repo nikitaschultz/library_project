@@ -1,0 +1,12 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Series</h1>
+    <% for series in @serieses %>
+    <h3><%= series.name() %></h3>
+    <a href="/serieses/<%= series.id() %>">View</a>
+    <hr />
+    <% end %>
+
+  </div>
+</div>
