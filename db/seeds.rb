@@ -146,6 +146,7 @@ tag2_id_array = tag2.books().map{|book| book.id()}
 genre9_id_array = genre9.books().map{|book| book.id()}
 
 test = tag2_id_array & genre9_id_array
+book_test = test.map{|id| Book.find(id)}
 
 binding.pry
 nil
