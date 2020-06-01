@@ -23,6 +23,17 @@ get '/tags/:id' do
   erb(:"tags/show")
 end
 
+post '/tags/:id' do
+  tag = Tag.new(params)
+  tag.update()
+  redirect("/tags/#{tag.id()}")
+end
+
+get '/tags/:id/edit' do
+  @tag = Tag.find(params["id"])
+  erb(:"tags/edit")
+end
+
 post '/tags/:id/delete' do
   @tag = Tag.find(params["id"])
   @tag.delete()

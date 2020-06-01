@@ -12,6 +12,9 @@
     <p><%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
+    <form action="/serieses/<%= @series.id() %>/edit" method="get">
+      <input type="submit" value="Edit Series">
+    </form>
     <form action="/serieses/<%= @series.id() %>/delete" method="post">
       <input type="submit" value="Delete Series">
     </form>

@@ -1,0 +1,12 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Edit Series</h1>
+    <form action="/serieses/<%= @series.id() %>" method="post">
+      <label for="series_name">Series:</label>
+      <input id="series_name" type="text" name="name" value="<%= @series.name() %>">
+      <input type='submit' value="Update">
+    </form>
+
+  </div>
+</div>

@@ -12,6 +12,9 @@
     <p><%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
+    <form action="/tags/<%= @tag.id() %>/edit" method="get">
+      <input type="submit" value="Edit Tag">
+    </form>
     <form action="/tags/<%= @tag.id() %>/delete" method="post">
       <input type="submit" value="Delete Tag">
     </form>
