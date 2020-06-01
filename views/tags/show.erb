@@ -1,8 +1,8 @@
 <div class = "pageview">
   <div class = "pagecontent">
-    <h1><%= @genre.name() %></h1>
+    <h1><%= @tag.name() %></h1>
     <h2>Books:</h2>
-    <% for book in @genre.books() %>
+    <% for book in @tag.books() %>
     <h3><%= book.title() %>
       <% if(book.series() != nil) %>
       (<%= book.series().name() %> #<%= book.series_number() %>)
@@ -12,8 +12,8 @@
     <p><%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
-    <form action="/genres/<%= @genre.id() %>/delete" method="post">
-      <input type="submit" value="Delete Genre">
+    <form action="/tags/<%= @tag.id() %>/delete" method="post">
+      <input type="submit" value="Delete Tag">
     </form>
   </div>
 </div>
