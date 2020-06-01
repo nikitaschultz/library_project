@@ -15,122 +15,171 @@ Book.delete_all()
 Tag.delete_all()
 Genre.delete_all()
 Author.delete_all()
-OwnershipStatus.delete_all()
-ReadStatus.delete_all()
 Series.delete_all()
 
 ####GENRE SEEDS
-genre1 = Genre.new({"name" => "Crime"})
-genre1.save()
-genre2 = Genre.new({"name" => "Fantasy"})
-genre2.save()
-genre3 = Genre.new({"name" => "Sci-Fi"})
-genre3.save()
-genre4 = Genre.new({"name" => "Thriller"})
-genre4.save()
-genre5 = Genre.new({"name" => "Horror"})
-genre5.save()
-genre6 = Genre.new({"name" => "Young Adult"})
-genre6.save()
-genre7 = Genre.new({"name" => "Non-Fiction"})
-genre7.save()
-genre8 = Genre.new({"name" => "Classic"})
-genre8.save()
-genre9 = Genre.new({"name" => "Literary Fiction"})
-genre9.save()
+crime = Genre.new({"name" => "Crime"})
+crime.save()
+fantasy = Genre.new({"name" => "Fantasy"})
+fantasy.save()
+scifi = Genre.new({"name" => "Sci-Fi"})
+scifi.save()
+thriller = Genre.new({"name" => "Thriller"})
+thriller.save()
+horror = Genre.new({"name" => "Horror"})
+horror.save()
+youngadult = Genre.new({"name" => "Young Adult"})
+youngadult.save()
+nonfiction = Genre.new({"name" => "Non-Fiction"})
+nonfiction.save()
+classic = Genre.new({"name" => "Classic"})
+classic.save()
+literaryfiction = Genre.new({"name" => "Literary Fiction"})
+literaryfiction.save()
 
 ####AUTHOR SEEDS
-author1 = Author.new({"first_name" => "Patrick", "last_name" => "Rothfuss"})
-author1.save()
-author2 = Author.new({"first_name" => "Markus", "last_name" => "Zusak"})
-author2.save()
-author3 = Author.new({"first_name" => "C.J.", "last_name" => "Tudor"})
-author3.save()
-author4 = Author.new({"first_name" => "Richard", "last_name" => "Dawkins"})
-author4.save()
-author5 = Author.new({"first_name" => "Robert", "last_name" => "Galbraith"})
-author5.save()
-author6 = Author.new({"first_name" => "Alex", "last_name" => "North"})
-author6.save()
-author7 = Author.new({"first_name" => "Anne", "last_name" => "Griffin"})
-author7.save()
-author8 = Author.new({"first_name" => "Robin", "last_name" => "Hobb"})
-author8.save()
-
-####OWNERSHIP STATUS SEEDS
-ownershipstatus1 = OwnershipStatus.new({"name" => "Bookshelf"})
-ownershipstatus1.save()
-ownershipstatus2 = OwnershipStatus.new({"name" => "Wishlist"})
-ownershipstatus2.save()
-
-####READ STATUS SEEDS
-readstatus1 = ReadStatus.new({"name" => "Finished"})
-readstatus1.save()
-readstatus2 = ReadStatus.new({"name" => "In progress"})
-readstatus2.save()
-readstatus3 = ReadStatus.new({"name" => "Abandoned"})
-readstatus3.save()
-readstatus4 = ReadStatus.new({"name" => "Not started"})
-readstatus4.save()
+patrickrothfuss = Author.new({"first_name" => "Patrick", "last_name" => "Rothfuss"})
+patrickrothfuss.save()
+markuszusak = Author.new({"first_name" => "Markus", "last_name" => "Zusak"})
+markuszusak.save()
+cjtudor = Author.new({"first_name" => "C.J.", "last_name" => "Tudor"})
+cjtudor.save()
+richarddawkins = Author.new({"first_name" => "Richard", "last_name" => "Dawkins"})
+richarddawkins.save()
+robertgalbraith = Author.new({"first_name" => "Robert", "last_name" => "Galbraith"})
+robertgalbraith.save()
+alexnorth = Author.new({"first_name" => "Alex", "last_name" => "North"})
+alexnorth.save()
+annegriffin = Author.new({"first_name" => "Anne", "last_name" => "Griffin"})
+annegriffin.save()
+robinhobb = Author.new({"first_name" => "Robin", "last_name" => "Hobb"})
+robinhobb.save()
+lucyfoley = Author.new({"first_name" => "Lucy", "last_name" => "Foley"})
+lucyfoley.save()
+jamessacorey = Author.new({"first_name" => "James SA", "last_name" => "Corey"})
+jamessacorey.save()
 
 ####SERIES SEEDS
 series1 = Series.new({"name" => "Kingkiller Chronicles"})
 series1.save()
 series2 = Series.new({"name" => "Farseer Trilogy"})
 series2.save()
+series3 = Series.new({"name" => "Cormoran Strike"})
+series3.save()
+
+notstarted = ReadStatus.find_by_name("Not started")
+finished = ReadStatus.find_by_name("Finished")
+inprogress = ReadStatus.find_by_name("In progress")
+abandoned = ReadStatus.find_by_name("Abandoned")
+
+bookshelf = OwnershipStatus.find_by_name("Bookshelf")
+wishlist = OwnershipStatus.find_by_name("Wishlist")
 
 ####BOOK SEEDS
 book1 = Book.new({
   "title" => "Assassin's Apprentice",
-  "author_id" => author8.id(),
-  "genre_id" => genre2.id(),
-  "read_status_id" => readstatus4.id(),
-  "ownership_status_id" => ownershipstatus1.id(),
+  "author_id" => robinhobb.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
   "series_id" => series2.id(),
   "series_number" => 1
   })
 book1.save()
 book2 = Book.new({
   "title" => "The Book Thief",
-  "author_id" => author2.id(),
-  "genre_id" => genre9.id(),
-  "read_status_id" => readstatus4.id(),
-  "ownership_status_id" => ownershipstatus1.id()
+  "author_id" => markuszusak.id(),
+  "genre_id" => literaryfiction.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
   })
 book2.save()
 book3 = Book.new({
   "title" => "When All Is Said",
-  "author_id" => author7.id(),
-  "genre_id" => genre9.id(),
-  "read_status_id" => readstatus4.id(),
-  "ownership_status_id" => ownershipstatus1.id()
+  "author_id" => annegriffin.id(),
+  "genre_id" => literaryfiction.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
   })
 book3.save()
 book4 = Book.new({
   "title" => "The Whisper Man",
-  "author_id" => author6.id(),
-  "genre_id" => genre4.id(),
-  "read_status_id" => readstatus4.id(),
-  "ownership_status_id" => ownershipstatus1.id()
+  "author_id" => alexnorth.id(),
+  "genre_id" => thriller.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
   })
 book4.save()
 book5 = Book.new({
   "title" => "The Taking of Annie Thorne",
-  "author_id" => author3.id(),
-  "genre_id" => genre5.id(),
-  "read_status_id" => readstatus1.id(),
-  "ownership_status_id" => ownershipstatus2.id()
+  "author_id" => cjtudor.id(),
+  "genre_id" => horror.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
   })
 book5.save()
 book6 = Book.new({
   "title" => "The Chalk Man",
-  "author_id" => author3.id(),
-  "genre_id" => genre5.id(),
-  "read_status_id" => readstatus1.id(),
-  "ownership_status_id" => ownershipstatus2.id()
+  "author_id" => cjtudor.id(),
+  "genre_id" => horror.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
   })
 book6.save()
-
+book7 = Book.new({
+  "title" => "The Magic of Reality",
+  "author_id" => richarddawkins.id(),
+  "genre_id" => nonfiction.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book7.save()
+book8 = Book.new({
+  "title" => "The Cuckoo's Calling",
+  "author_id" => robertgalbraith.id(),
+  "genre_id" => crime.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series3.id(),
+  "series_number" => 1
+  })
+book8.save()
+book9 = Book.new({
+  "title" => "The Name of the Wind",
+  "author_id" => patrickrothfuss.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series1.id(),
+  "series_number" => 1
+  })
+book9.save()
+book10 = Book.new({
+  "title" => "The Wise Man's Fear",
+  "author_id" => patrickrothfuss.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series1.id(),
+  "series_number" => 2
+  })
+book10.save()
+book11 = Book.new({
+  "title" => "The Hunting Party",
+  "author_id" => lucyfoley.id(),
+  "genre_id" => crime.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => wishlist.id()
+  })
+book11.save()
+book12 = Book.new({
+  "title" => "Levithian Wakes",
+  "author_id" => jamessacorey.id(),
+  "genre_id" => scifi.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => wishlist.id()
+  })
+book12.save()
 
 review1 = Review.new({
   "book_id" => book3.id(),
@@ -157,22 +206,20 @@ review4 = Review.new({
   })
 review4.save()
 
-
 tag1 = Tag.new("name" => "Page-turner")
 tag1.save()
-tag2 = Tag.new("name" => "Twisty")
+tag2 = Tag.new("name" => "Whodunnit")
 tag2.save()
+tag3 = Tag.new("name" => "Detective Book")
+tag3.save()
 
 book_tag1 = BookTag.new({"book_id" => book4.id(), "tag_id" => tag1.id()})
 book_tag1.save()
-book_tag2 = BookTag.new({"book_id" => book3.id(), "tag_id" => tag2.id()})
+book_tag2 = BookTag.new({"book_id" => book11.id(), "tag_id" => tag2.id()})
 book_tag2.save()
+book_tag3 = BookTag.new({"book_id" => book8.id(), "tag_id" => tag3.id()})
+book_tag3.save()
 
-tag2_id_array = tag2.books().map{|book| book.id()}
-genre9_id_array = genre9.books().map{|book| book.id()}
-
-test = tag2_id_array & genre9_id_array
-book_test = test.map{|id| Book.find(id)}
 
 binding.pry
 nil

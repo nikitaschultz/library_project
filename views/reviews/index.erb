@@ -1,0 +1,14 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Reviews</h1>
+    <% for review in @reviews %>
+    <h2><%= review.book().title() %></h2>
+    <h3><%= review.book().author().full_name %></h3>
+    <p><%= review.rating() %> Stars</p>
+    <a href="/books/<%= review.book().id() %>">View</a>
+    <hr />
+    <% end %>
+
+  </div>
+</div>

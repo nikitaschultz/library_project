@@ -19,10 +19,10 @@
 <h3>Tags:</h3>
 <ul>
   <% @book.books_tags().each do |book_tag| %>
-  <li><%= book_tag.tag().name() %></li>
+  <li><%= book_tag.tag().name() %>
   <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
   <input type="submit" value="Delete Tag">
-  </form>
+  </form></li>
   <% end %>
 </ul>
 
@@ -47,6 +47,15 @@
 <form action="/books/<%= @book.id() %>/delete" method="post">
   <input type="submit" value="Delete Book">
 </form>
+<% if @book.review == nil %>
+<form action="/reviews/<%= @book.id() %>/new" method="get">
+  <input type="submit" value="Review Book">
+</form>
+<% else %>
+<form action="/reviews/<%= @book.review().id() %>/delete" method="post">
+  <input type="submit" value="Delete Review">
+</form>
+<% end %>
 
 </div>
 </div>

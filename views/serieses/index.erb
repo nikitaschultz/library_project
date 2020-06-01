@@ -2,6 +2,10 @@
   <div class = "pagecontent">
 
     <h1>Series</h1>
+    <form action="/serieses/new" method="get">
+      <input class="btn-nav" type="submit" value="New Series">
+    </form>
+
     <% for series in @serieses %>
     <h3><%= series.name() %></h3>
     <a href="/serieses/<%= series.id() %>">View</a>

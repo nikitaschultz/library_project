@@ -62,3 +62,10 @@ CREATE TABLE books_tags(
   book_id INT REFERENCES books(id) ON DELETE CASCADE,
   tag_id INT REFERENCES tags(id) ON DELETE CASCADE
 );
+
+INSERT INTO ownership_statuses (name) VALUES ('Bookshelf');
+INSERT INTO ownership_statuses (name) VALUES ('Wishlist');
+INSERT INTO read_statuses (name) VALUES ('Finished');
+INSERT INTO read_statuses (name) VALUES ('In progress');
+INSERT INTO read_statuses (name) VALUES ('Abandoned');
+INSERT INTO read_statuses (name) VALUES ('Not started');
