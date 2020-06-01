@@ -53,6 +53,26 @@ get '/books/genre/:genre_id' do
   erb(:"books/by_genre")
 end
 
+post '/books/series' do
+  redirect("/books/series/#{params["series_id"]}")
+end
+
+get '/books/series/:series_id' do
+  @series = Series.find(params["series_id"])
+  @books = Book.includes(Book.all(), @series.books())
+  erb(:"books/by_series")
+end
+
+post '/books/read_status' do
+  redirect("/books/read_status/#{params["read_status_id"]}")
+end
+
+get '/books/read_status/:read_status_id' do
+  @read_status = ReadStatus.find(params["read_status_id"])
+  @books = Book.includes(Book.all(), @read_status.books())
+  erb(:"books/by_read_status")
+end
+
 get '/books/:id' do
   @book = Book.find(params["id"])
   erb(:"books/show")

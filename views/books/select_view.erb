@@ -24,5 +24,25 @@
       <input type="submit" value="View">
     </form>
 
+    <form action="/books/series" method="post">
+      <label for="series">Series:</label><br>
+      <select id="series" name="series_id">
+        <% for series in @serieses %>
+        <option id="series" value="<%= series.id() %>"><%= series.name() %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form>
+
+    <form action="/books/read_status" method="post">
+      <label for="read_status">Read Status:</label><br>
+      <select id="read_status" name="read_status_id">
+        <% for read_status in @read_statuses %>
+        <option id="read_status" value="<%= read_status.id() %>"><%= read_status.name() %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form>
+
   </div>
 </div>
