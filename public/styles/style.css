@@ -6,7 +6,7 @@ body {
   display: flex;
   flex: 1;
   flex-direction: row;
-  background-color: orange;
+  background-color: cornflowerblue;
   height: 7vh;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 80px;
-  background-color: orange;
+  background-color: cornflowerblue;
   padding: 3px;
   margin: 0px;
   text-decoration: none;
@@ -51,8 +51,8 @@ body {
   padding: 3px;
   margin: 0px;
   text-decoration: none;
-  color: orange;
-  border: solid 1px orange;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
   border-radius: 15px;
   text-align: center;
 }
@@ -71,14 +71,14 @@ body {
   padding: 3px;
   margin: 5px;
   text-decoration: none;
-  color: orange;
-  border: solid 1px orange;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
 }
 
 .btn-nav:hover {
   color: white;
   border: solid 1px white;
-  background-color: orange;
+  background-color: cornflowerblue;
   width: 80px;
   text-align: center;
   padding: 3px;
@@ -94,7 +94,7 @@ ul {
 
 .page-footer p {
   bottom: 0%;
-  background-color: orange;
+  background-color: cornflowerblue;
   overflow: hidden;
   position: fixed;
   height: 10px;
@@ -142,5 +142,5 @@ p {
 
 a {
   text-decoration: none;
-  color: orange;
+  color: cornflowerblue;
 }

@@ -5,7 +5,8 @@
     <% for book in @books %>
     <h2><%= book.title() %></h2>
     <h3><%= book.author().full_name %></h3>
-    <a href="/books/<%= book.id() %>">View</a>
+    <a class="btn-main" href="/books/<%= book.id() %>">View</a>
+    <a class="btn-nav" href="/reviews/<%= book.id() %>/new">Review</a>
     <hr />
     <% end %>
 

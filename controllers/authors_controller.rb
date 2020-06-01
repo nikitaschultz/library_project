@@ -18,6 +18,17 @@ get '/authors/new' do
   erb(:"authors/new")
 end
 
+post '/authors/:id/edit' do
+  @author = Author.find(params["id"])
+  erb(:"authors/edit")
+end
+
+post '/authors/:id' do
+  author = Author.new(params)
+  author.update()
+  redirect("authors/#{author.id()}")
+end
+
 get '/authors/:id' do
   @author = Author.find(params["id"])
   erb(:"authors/show")
