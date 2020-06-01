@@ -29,6 +29,13 @@ class ReadStatus
     return ReadStatus.new(pg_result[0])
   end
 
+  def ReadStatus.find_by_name(name)
+    sql = "SELECT * FROM read_statuses WHERE name = $1"
+    values = [name]
+    pg_result = SqlRunner.run(sql, values)
+    return ReadStatus.new(pg_result[0])
+  end
+
   def save()
     sql = "INSERT INTO read_statuses (name) VALUES ($1) RETURNING *"
     values = [@name]

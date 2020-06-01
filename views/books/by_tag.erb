@@ -1,0 +1,17 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <h1>Books: <%= @tag.name() %></h1>
+    <% for book in @books %>
+    <h2><%= book.title() %>
+      <% if(book.series() != nil) %>
+      (<%= book.series().name() %> #<%= book.series_number() %>)
+      <% end %>
+    </h2>
+    <h3><%= book.author().full_name %></h3>
+    <a href="/books/<%= book.id() %>">View</a>
+    <hr />
+    <% end %>
+
+  </div>
+</div>

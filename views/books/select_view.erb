@@ -44,5 +44,29 @@
       <input type="submit" value="View">
     </form>
 
+    <form action="/books/tag" method="post">
+      <label for="tag">Tag:</label><br>
+      <select id="tag" name="tag_id">
+        <% for tag in @tags %>
+        <option id="tag" value="<%= tag.id() %>"><%= tag.name() %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form><br>
+
+    <h2>View by review:</h2>
+
+    <form action="/books/rating" method="post">
+      <label for="rating">Rating:</label><br>
+      <select id="rating" name="rating_number">
+        <% for rating in @ratings %>
+        <option id="rating" value="<%= rating %>"><%= rating %>+ Stars</option>
+        <% end %>
+      </select>
+      <input type="submit" value="View">
+    </form>
+
+    <h2><a href="/books/view/<%= OwnershipStatus.find_by_name("Bookshelf").id() %>">View All</a></h2>
+
   </div>
 </div>

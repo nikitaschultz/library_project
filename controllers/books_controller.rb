@@ -22,7 +22,7 @@ get '/books/view' do
   @serieses = Series.all()
   @read_statuses = ReadStatus.all()
   @tags = Tag.all()
-  @reviews = Review.all()
+  @ratings = [1, 2, 3, 4, 5]
   erb(:"books/select_view")
 end
 
@@ -71,6 +71,26 @@ get '/books/read_status/:read_status_id' do
   @read_status = ReadStatus.find(params["read_status_id"])
   @books = Book.includes(Book.all(), @read_status.books())
   erb(:"books/by_read_status")
+end
+
+post '/books/tag' do
+  redirect("/books/tag/#{params["tag_id"]}")
+end
+
+get '/books/tag/:tag_id' do
+  @tag = Tag.find(params["tag_id"])
+  @books = Book.includes(Book.all(), @tag.books())
+  erb(:"books/by_tag")
+end
+
+post '/books/rating' do
+  redirect("/books/rating/#{params["rating_number"]}")
+end
+
+get '/books/rating/:rating_number' do
+  @rating = params["rating_number"]
+  @books = Book.includes(Book.all(), Book.find_by_rating(params["rating_number"]))
+  erb(:"books/by_rating")
 end
 
 get '/books/:id' do

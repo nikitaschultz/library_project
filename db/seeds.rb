@@ -84,7 +84,7 @@ book1 = Book.new({
   "title" => "Assassin's Apprentice",
   "author_id" => author8.id(),
   "genre_id" => genre2.id(),
-  "read_status_id" => readstatus1.id(),
+  "read_status_id" => readstatus4.id(),
   "ownership_status_id" => ownershipstatus1.id(),
   "series_id" => series2.id(),
   "series_number" => 1
@@ -94,7 +94,7 @@ book2 = Book.new({
   "title" => "The Book Thief",
   "author_id" => author2.id(),
   "genre_id" => genre9.id(),
-  "read_status_id" => readstatus1.id(),
+  "read_status_id" => readstatus4.id(),
   "ownership_status_id" => ownershipstatus1.id()
   })
 book2.save()
@@ -102,18 +102,35 @@ book3 = Book.new({
   "title" => "When All Is Said",
   "author_id" => author7.id(),
   "genre_id" => genre9.id(),
-  "read_status_id" => readstatus1.id(),
-  "ownership_status_id" => ownershipstatus2.id()
+  "read_status_id" => readstatus4.id(),
+  "ownership_status_id" => ownershipstatus1.id()
   })
 book3.save()
 book4 = Book.new({
   "title" => "The Whisper Man",
   "author_id" => author6.id(),
   "genre_id" => genre4.id(),
-  "read_status_id" => readstatus1.id(),
+  "read_status_id" => readstatus4.id(),
   "ownership_status_id" => ownershipstatus1.id()
   })
 book4.save()
+book5 = Book.new({
+  "title" => "The Taking of Annie Thorne",
+  "author_id" => author3.id(),
+  "genre_id" => genre5.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus2.id()
+  })
+book5.save()
+book6 = Book.new({
+  "title" => "The Chalk Man",
+  "author_id" => author3.id(),
+  "genre_id" => genre5.id(),
+  "read_status_id" => readstatus1.id(),
+  "ownership_status_id" => ownershipstatus2.id()
+  })
+book6.save()
+
 
 review1 = Review.new({
   "book_id" => book3.id(),
@@ -127,6 +144,19 @@ review2 = Review.new({
   "review" => "Terrifying and very suspenseful!"
   })
 review2.save()
+review3 = Review.new({
+  "book_id" => book5.id(),
+  "rating" => 2,
+  "review" => "Very disappointing.  Supernatural element comes from nowhere and is used to explain away the mysterious plot points."
+  })
+review3.save()
+review4 = Review.new({
+  "book_id" => book6.id(),
+  "rating" => 4,
+  "review" => "Very scary and well plotted."
+  })
+review4.save()
+
 
 tag1 = Tag.new("name" => "Page-turner")
 tag1.save()

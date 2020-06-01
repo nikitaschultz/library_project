@@ -30,6 +30,15 @@ class Book
     return new_array.map{|id| Book.find(id)}
   end
 
+  def Book.find_by_rating(rating)
+    sql = "SELECT books.* FROM
+    books INNER JOIN reviews ON books.id = reviews.book_id
+    WHERE reviews.rating >= $1 ORDER BY books.title"
+    values = [rating]
+    pg_result = SqlRunner.run(sql, values)
+    return pg_result.map{|book_info| Book.new(book_info)}
+  end
+
   def Book.delete_all()
     sql = "DELETE FROM books"
     SqlRunner.run(sql)
