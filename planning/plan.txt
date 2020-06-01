@@ -50,3 +50,5 @@ X Create seeds file
 - Create test files
 - Create model files
 - Amend seeds file
+
+ADD BUTTON TO PURCHASED ON WISHLIST

@@ -99,6 +99,22 @@ get '/books/:id' do
   erb(:"books/show")
 end
 
+get '/books/:id/edit' do
+  @authors = Author.all()
+  @genres = Genre.all()
+  @read_statuses = ReadStatus.all()
+  @ownership_statuses = OwnershipStatus.all()
+  @serieses = Series.all()
+  @book = Book.find(params["id"])
+  erb(:"books/edit")
+end
+
+post '/books/:id' do
+  book = Book.new(params)
+  book.update()
+  erb(:"books/#{book.id()}")
+end
+
 post '/books/:id/delete' do
   @book = Book.find(params["id"])
   @book.delete()

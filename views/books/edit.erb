@@ -1,0 +1,57 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+<form action="/books/<%= @book.id() %>" method="post">
+
+  <label for="title">Title:</label><br>
+  <input id="title" type="text" name="title" value="<%=@book.title()%>">
+  <br><br>
+
+  <label for="author">Author:</label><br>
+  <select id="author" name="author_id">
+    <% for author in @authors %>
+    <option <%= "selected" if author.id() == @book.author().id()%> value="<%= author.id() %>"><%= author.full_name() %></option>
+    <% end %>
+  </select><br><br>
+
+  <label for="genre">Genre:</label><br>
+  <select id="genre" name="genre_id">
+    <% for genre in @genres %>
+    <option <%= "selected" if genre.id() == @book.genre().id()%> value="<%= genre.id() %>"><%= genre.name() %></option>
+    <% end %>
+  </select><br><br>
+
+<h2>Read status:</h2>
+<label for="read_status"></label>
+<select id="read_status" name="read_status_id">
+  <% for read_status in @read_statuses %>
+  <option <%= "selected" if read_status.id() == @book.read_status().id()%> value="<%= read_status.id() %>"><%= read_status.name() %></option>
+  <% end %>
+</select><br><br>
+
+<h2>Ownership status:</h2>
+<label for="ownership_status"></label>
+<select id="ownership_status" name="ownership_status_id">
+  <% for ownership_status in @ownership_statuses %>
+  <option <%= "selected" if ownership_status.id() == @book.ownership_status().id()%> value="<%= ownership_status.id() %>"><%= ownership_status.name() %></option>
+  <% end %>
+</select><br><br>
+
+<h2>Series details:</h2>
+<label for="series_name">Series Name:</label>
+<select id="series_name" name="series_id">
+  <option selected value="nill">N/A</option>
+  <% for series in @serieses %>
+  <option <%= "selected" if @book.series != nil and series.id() == @book.series().id() %> value="<%= series.id() %>"><%= series.name() %></option>
+  <% end %>
+</select><br>
+<label for="number_in_series">Number in Series:</label><br>
+<input id="number_in_series" type="number" name="series_number" value="<%= @book.series_number()%>">
+<br><br>
+
+<input type='submit' value="Create">
+
+</form>
+
+</div>
+</div>

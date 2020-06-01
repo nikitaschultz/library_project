@@ -25,7 +25,7 @@ end
 
 post '/serieses/:id' do
   series = Series.new(params)
-  series.update
+  series.update()
   redirect("/serieses/#{series.id()}")
 end
 
