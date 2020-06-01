@@ -45,7 +45,7 @@ class Review
   end
 
   def update()
-    sql = "UDPATE reviews SET (book_id, rating, review) VALUES ($1, $2, $3) WHERE id = $4"
+    sql = "UPDATE reviews SET (book_id, rating, review) = ($1, $2, $3) WHERE id = $4"
     values = [@book_id, @rating, @review, @id]
     SqlRunner.run(sql, values)
   end

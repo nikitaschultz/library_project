@@ -1,61 +1,68 @@
 <div class = "pageview">
   <div class = "pagecontent">
-<h1><%= @book.title() %></h1>
-<h2><%= @book.author().full_name() %></h2>
 
-<h3>Genre:</h3>
-<p><%= @book.genre().name() %></p>
+  <div class="title-centered">
+    <h1><%= @book.title() %></h1>
+    <h2><%= @book.author().full_name() %></h2>
+  </div>
 
-<h3>Series:</h3>
-<% if(@book.series() == nil) %>
-<p>N/A</p>
-<% else %>
-<p><%= @book.series().name() %> (<%= @book.series_number() %>)</p>
-<% end %>
+  <h3>Genre:</h3>
+  <p><%= @book.genre().name() %></p>
 
-<h3>Ownership Status:</h3>
-<p><%= @book.ownership_status().name() %></p>
-
-<h3>Tags:</h3>
-<ul>
-  <% @book.books_tags().each do |book_tag| %>
-  <li><%= book_tag.tag().name() %>
-  <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
-  <input type="submit" value="Delete Tag">
-  </form></li>
+  <h3>Series:</h3>
+  <% if(@book.series() == nil) %>
+  <p>N/A</p>
+  <% else %>
+  <p><%= @book.series().name() %> (<%= @book.series_number() %>)</p>
   <% end %>
-</ul>
 
-<form id="book_tag_add" action="/book_tag" method="post">
-  <select id="book_tag_add" name="tag_id">
-    <% for tag in @book.tags_not_used() %>
-    <option value="<%= tag.id() %>"><%= tag.name() %></option>
+  <h3>Ownership Status:</h3>
+  <p><%= @book.ownership_status().name() %></p>
+
+  <h3>Tags:</h3>
+  <ul>
+    <% @book.books_tags().each do |book_tag| %>
+    <li><%= book_tag.tag().name() %>
+    <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
+    <input type="submit" value="Delete Tag">
+    </form></li>
     <% end %>
-  </select>
-  <input type="hidden" name="book_id" value="<%= @book.id() %>">
-  <input type="submit" value="Add Tag">
-</form>
+  </ul>
 
-<h3>Review:</h3>
-<% if(@book.review() == nil) %>
-<p>N/A</p>
-<% else %>
-<p><%= @book.review().rating() %> stars </p>
-<p>"<%= @book.review().review() %>"</p>
-<% end %>
+  <form id="book_tag_add" action="/book_tag" method="post">
+    <select id="book_tag_add" name="tag_id">
+      <% for tag in @book.tags_not_used() %>
+      <option value="<%= tag.id() %>"><%= tag.name() %></option>
+      <% end %>
+    </select>
+    <input type="hidden" name="book_id" value="<%= @book.id() %>">
+    <input type="submit" value="Add Tag">
+  </form>
 
-<form action="/books/<%= @book.id() %>/delete" method="post">
-  <input type="submit" value="Delete Book">
-</form>
-<% if @book.review == nil %>
-<form action="/reviews/<%= @book.id() %>/new" method="get">
-  <input type="submit" value="Review Book">
-</form>
-<% else %>
-<form action="/reviews/<%= @book.review().id() %>/delete" method="post">
-  <input type="submit" value="Delete Review">
-</form>
-<% end %>
+  <h3>Review:</h3>
+  <% if(@book.review() == nil) %>
+  <p>N/A</p>
+  <% else %>
+  <p><%= @book.review().rating() %> stars </p>
+  <p>"<%= @book.review().review() %>"</p>
+  <% end %>
 
-</div>
+  <% if @book.review == nil %>
+  <form action="/reviews/<%= @book.id() %>/new" method="get">
+    <input type="submit" value="Review Book">
+  </form>
+  <% else %>
+  <form action="/reviews/<%= @book.review().id() %>/edit" method="get">
+    <input type="submit" value="Edit Review">
+  </form>
+  <form action="/reviews/<%= @book.review().id() %>/delete" method="post">
+    <input type="submit" value="Delete Review">
+  </form>
+  <% end %>
+
+  <form action="/books/<%= @book.id() %>/delete" method="post">
+    <input type="submit" value="Delete Book">
+  </form>
+
+  </div>
 </div>

@@ -27,6 +27,12 @@ body {
   flex-direction: row;
 }
 
+.title-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .btn-main {
   display: flex;
   justify-content: center;
@@ -113,15 +119,15 @@ ul {
   display: flex;
   justify-content: center;
   background-color: gainsboro;
-  min-height: 93vh;
+  min-height: 90vh;
 }
 
 .pagecontent {
   width: 40vw;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border-radius: 3%;
-  margin: 10px 0px;
+  margin: 30px 0px;
 }
 
 h1 {

@@ -23,6 +23,17 @@ get '/genres/:id' do
   erb(:"genres/show")
 end
 
+post '/genres/:id' do
+  genre = Genre.new(params)
+  genre.update()
+  redirect("/genres/#{genre.id()}")
+end
+
+get '/genres/:id/edit' do
+  @genre = Genre.find(params["id"])
+  erb(:"genres/edit")
+end
+
 post '/genres/:id/delete' do
   @genre = Genre.find(params["id"])
   @genre.delete()

@@ -11,7 +11,7 @@
     <p><%= book.genre().name() %>, <%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
-    <form action="/authors/<%= @author.id() %>/edit" method="post">
+    <form action="/authors/<%= @author.id() %>/edit" method="get">
       <input class="btn-main" type="submit" value="Edit Author">
     </form>
     <form action="/authors/<%= @author.id() %>/delete" method="post">

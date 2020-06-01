@@ -19,6 +19,17 @@ get '/reviews/:book_id/new' do
   erb(:"reviews/new")
 end
 
+get '/reviews/:id/edit' do
+  @review = Review.find(params["id"])
+  erb(:"reviews/edit")
+end
+
+post '/reviews/:id' do
+  review = Review.new(params)
+  review.update
+  redirect("/books/#{review.book().id()}")
+end
+
 post '/reviews/:id/delete' do
   review = Review.find(params["id"])
   book_id = review.book().id()

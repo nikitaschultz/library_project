@@ -18,7 +18,7 @@ get '/authors/new' do
   erb(:"authors/new")
 end
 
-post '/authors/:id/edit' do
+get '/authors/:id/edit' do
   @author = Author.find(params["id"])
   erb(:"authors/edit")
 end
