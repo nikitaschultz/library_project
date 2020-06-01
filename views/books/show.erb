@@ -18,7 +18,7 @@
 
 <h3>Tags:</h3>
 <ul>
-  <% @books_tags.each do |book_tag| %>
+  <% @book.books_tags().each do |book_tag| %>
   <li><%= book_tag.tag().name() %></li>
   <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
   <input type="submit" value="Delete Tag">
@@ -28,7 +28,7 @@
 
 <form id="book_tag_add" action="/book_tag" method="post">
   <select id="book_tag_add" name="tag_id">
-    <% for tag in @tags %>
+    <% for tag in @book.tags_not_used() %>
     <option value="<%= tag.id() %>"><%= tag.name() %></option>
     <% end %>
   </select>

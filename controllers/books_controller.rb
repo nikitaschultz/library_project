@@ -96,7 +96,6 @@ end
 get '/books/:id' do
   @tags = Tag.all()
   @book = Book.find(params["id"])
-  @books_tags = @book.books_tags()
   erb(:"books/show")
 end
 

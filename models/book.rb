@@ -131,5 +131,16 @@ class Book
     return pg_result.map{|tag_info| Tag.new(tag_info)}
   end
 
+  def tags_not_used()
+    all_tags = Tag.all()
+    for tag in all_tags
+      for used_tag in self.tags()
+        if tag.id() == used_tag.id()
+          all_tags.delete(tag)
+        end
+      end
+    end
+    return all_tags
+  end
 
 end
