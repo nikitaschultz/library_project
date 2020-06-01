@@ -6,6 +6,7 @@ require_relative('./controllers/serieses_controller')
 require_relative('./controllers/genres_controller')
 require_relative('./controllers/tags_controller')
 require_relative('./controllers/gimmes_controller')
+require_relative('./controllers/books_tags_controller')
 
 get '/' do
   erb(:index)

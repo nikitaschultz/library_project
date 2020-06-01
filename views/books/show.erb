@@ -18,10 +18,23 @@
 
 <h3>Tags:</h3>
 <ul>
-  <% @book.tags().each do |tag| %>
-  <li><%= tag.name() %></li>
+  <% @books_tags.each do |book_tag| %>
+  <li><%= book_tag.tag().name() %></li>
+  <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
+  <input type="submit" value="Delete Tag">
+  </form>
   <% end %>
 </ul>
+
+<form id="book_tag_add" action="/book_tag" method="post">
+  <select id="book_tag_add" name="tag_id">
+    <% for tag in @tags %>
+    <option value="<%= tag.id() %>"><%= tag.name() %></option>
+    <% end %>
+  </select>
+  <input type="hidden" name="book_id" value="<%= @book.id() %>">
+  <input type="submit" value="Add Tag">
+</form>
 
 <h3>Review:</h3>
 <% if(@book.review() == nil) %>
