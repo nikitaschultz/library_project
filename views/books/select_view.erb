@@ -11,7 +11,7 @@
         <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form><br>
 
     <form action="/books/genre" method="post">
@@ -21,7 +21,7 @@
         <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form>
 
     <form action="/books/series" method="post">
@@ -31,7 +31,7 @@
         <option id="series" value="<%= series.id() %>"><%= series.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form>
 
     <form action="/books/read_status" method="post">
@@ -41,7 +41,7 @@
         <option id="read_status" value="<%= read_status.id() %>"><%= read_status.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form>
 
     <form action="/books/tag" method="post">
@@ -51,7 +51,7 @@
         <option id="tag" value="<%= tag.id() %>"><%= tag.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form><br>
 
     <h2>View by review:</h2>
@@ -63,10 +63,10 @@
         <option id="rating" value="<%= rating %>"><%= rating %>+ Stars</option>
         <% end %>
       </select>
-      <input type="submit" value="View">
+      <input class="btn-main" type="submit" value="View">
     </form>
 
-    <h2><a href="/books/view/<%= OwnershipStatus.find_by_name("Bookshelf").id() %>">View All</a></h2>
+    <h2><a class="btn-nav" href="/books/view/<%= OwnershipStatus.find_by_name("Bookshelf").id() %>">View All</a></h2>
 
   </div>
 </div>

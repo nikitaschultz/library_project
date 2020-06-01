@@ -29,6 +29,10 @@
       <input type="submit" value="Gimme a book!">
     </form><br>
 
+    <form action="/gimme/<%= @wishlist.name().downcase() %>/anything" method="post">
+      <input type="submit" value="Gimme any!">
+    </form><br>
+
     <h2>I want to read a book!</h2>
     <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/author" method="post">
       <label for="author">Author:</label><br>
@@ -48,6 +52,10 @@
         <% end %>
       </select>
       <input type="submit" value="Gimme a book!">
+    </form><br>
+
+    <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/anything" method="post">
+      <input type="submit" value="Gimme any!">
     </form><br>
 
     <h2>I want to recommend a book!</h2>
@@ -70,5 +78,10 @@
       </select>
       <input type="submit" value="Gimme a book!">
     </form><br>
+
+    <form action="/gimme/recommend/anything" method="post">
+      <input type="submit" value="Gimme any!">
+    </form><br>
+
   </div>
 </div>

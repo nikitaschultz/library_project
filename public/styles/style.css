@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   position: sticky;
   overflow: scroll;
-  width: 100%
+  width: 100%;
 }
 
 .navigation-left ul {
@@ -27,36 +27,69 @@ body {
   flex-direction: row;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px
-}
-
-li {
-  margin: 0px;
-  background-color: white;
-  border: 0px;
-  border-radius: 15px;
-}
-
-li a {
-  background-color: white;
-  text-align: center;
-  border-radius: 15px;
-  color: orange;
-  text-decoration: none;
+.btn-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
+  background-color: orange;
+  padding: 3px;
+  margin: 0px;
+  text-decoration: none;
+  color: white;
+  border: solid 1px white;
+  border-radius: 15px;
+  text-align: center;
 }
 
-
-li:hover a:hover {
-  color: white;
+.btn-main:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  background-color: white;
+  padding: 3px;
+  margin: 0px;
   text-decoration: none;
+  color: orange;
+  border: solid 1px orange;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.btn-nav:hover a {
+  color: white;
+}
+
+.btn-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: orange;
+  border: solid 1px orange;
+}
+
+.btn-nav:hover {
+  color: white;
   border: solid 1px white;
   background-color: orange;
   width: 80px;
   text-align: center;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px
 }
 
 .page-footer p {
@@ -84,7 +117,7 @@ li:hover a:hover {
 }
 
 .pagecontent {
-  width: 50%;
+  width: 40vw;
   background-color: white;
   padding: 10px;
   border-radius: 3%;
@@ -107,6 +140,7 @@ p {
   font-size: 11px;
 }
 
-label.style {
-  font-sie: 11px;
+a {
+  text-decoration: none;
+  color: orange;
 }

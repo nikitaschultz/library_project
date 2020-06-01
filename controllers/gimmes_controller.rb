@@ -49,6 +49,13 @@ post '/gimme/wishlist/genre' do
   redirect("/books/#{sample_book_id}")
 end
 
+post '/gimme/wishlist/anything' do
+  @wishlist = OwnershipStatus.find_by_name("Wishlist")
+  @books = @wishlist.books()
+  sample_book_id = @books.sample().id()
+  redirect("/books/#{sample_book_id}")
+end
+
 post '/gimme/not_started/author' do
   @author = Author.find(params["author_id"])
   @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
@@ -69,6 +76,14 @@ post '/gimme/not_started/genre' do
   redirect("/books/#{sample_book_id}")
 end
 
+post '/gimme/not_started/anything' do
+  @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
+  @not_started = ReadStatus.find_by_name("Not started")
+  @books = Book.includes(@bookshelf.books(), @not_started.books())
+  sample_book_id = @books.sample().id()
+  redirect("/books/#{sample_book_id}")
+end
+
 post '/gimme/recommend/author' do
   @author = Author.find(params["author_id"])
   @books = Book.includes(Book.find_by_rating(4), @author.books())
@@ -79,6 +94,12 @@ end
 post '/gimme/recommend/genre' do
   @genre = Genre.find(params["genre_id"])
   @books = Book.includes(Book.find_by_rating(4), @genre.books())
+  sample_book_id = @books.sample().id()
+  redirect("/books/#{sample_book_id}")
+end
+
+post '/gimme/recommend/anything' do
+  @books = Book.find_by_rating(4)
   sample_book_id = @books.sample().id()
   redirect("/books/#{sample_book_id}")
 end
