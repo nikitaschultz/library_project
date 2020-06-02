@@ -13,7 +13,7 @@
     </div><br>
 
     <h2>I want to buy a book!</h2>
-
+    <p>Get a random book from your wishlist.</p>
     <form class="gimme-box" action="/gimme/<%= @wishlist.name().downcase() %>/author" method="post">
       <label class="gimme-label" for="author">Author:</label>
       <select class="dropdown" id="author" name="author_id">
@@ -34,11 +34,15 @@
       <input class="btn-highlight" type="submit" value="Gimme a book!">
     </form>
 
-    <form action="/gimme/<%= @wishlist.name().downcase() %>/anything" method="post">
-      <input class="btn-main" type="submit" value="Gimme any!">
-    </form><br>
+    <div class="show-buttons">
+      <form action="/gimme/<%= @wishlist.name().downcase() %>/anything" method="post">
+        <input class="btn-main" type="submit" value="Gimme any!">
+      </form>
+    </div><br>
+
 
     <h2>I want to read a book!</h2>
+    <p>Get a random book in the "Not Started" read category.</p>
     <form class="gimme-box" action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/author" method="post">
       <label class="gimme-label" for="author">Author:</label><br>
       <select class="dropdown" id="author" name="author_id">
@@ -59,11 +63,15 @@
       <input class="btn-highlight" type="submit" value="Gimme a book!">
     </form>
 
-    <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/anything" method="post">
-      <input class="btn-main" type="submit" value="Gimme any!">
-    </form><br>
+    <div class="show-buttons">
+      <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/anything" method="post">
+        <input class="btn-main" type="submit" value="Gimme any!">
+      </form>
+    </div><br>
+
 
     <h2>I want to recommend a book!</h2>
+    <p>Get a random book that you have rated 4+ stars.</p>
     <form class="gimme-box" action="/gimme/recommend/author" method="post">
       <label class="gimme-label" for="author">Author:</label><br>
       <select class="dropdown" id="author" name="author_id">
@@ -84,9 +92,11 @@
       <input class="btn-highlight" type="submit" value="Gimme a book!">
     </form>
 
-    <form action="/gimme/recommend/anything" method="post">
-      <input class="btn-main" type="submit" value="Gimme any!">
-    </form><br>
+    <div class="show-buttons">
+      <form action="/gimme/recommend/anything" method="post">
+        <input class="btn-main" type="submit" value="Gimme any!">
+      </form>
+    </div>
 
   </div>
 </div>
