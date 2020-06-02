@@ -11,7 +11,7 @@
       <input class="btn-main" type="submit" value="Edit Book">
     </form>
     <form action="/books/<%= @book.id() %>/delete" method="post">
-      <input class="btn-nav" type="submit" value="Delete Book">
+      <input class="btn-highlight" type="submit" value="Delete Book">
     </form>
   </div>
 
@@ -31,23 +31,23 @@
   <h3>Tags:</h3>
   <ul>
     <% @book.books_tags().each do |book_tag| %>
-    <div class="index-buttons">
-    <li><%= book_tag.tag().name() %>
+    <div id="tag-box">
+    <li id="tag-item" ><%= book_tag.tag().name() %></li>
     <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
-    <input class="btn-nav" type="submit" value="Delete Tag">
-    </form></li></div>
+    <input class="btn-sml-highlight" type="submit" value="Delete Tag">
+    </form></div>
     <% end %>
   </ul><hr />
 
   <form id="book_tag_add" action="/book_tag" method="post">
     <div class="index-buttons">
-    <select id="book_tag_add" name="tag_id">
+    <select class="dropdown" id="book_tag_add" name="tag_id">
       <% for tag in @book.tags_not_used() %>
       <option value="<%= tag.id() %>"><%= tag.name() %></option>
       <% end %>
     </select>
     <input type="hidden" name="book_id" value="<%= @book.id() %>">
-    <input class="btn-main" type="submit" value="Add Tag">
+    <input class="btn-sml-main" type="submit" value="Add Tag">
     </div>
   </form><hr />
 
@@ -62,14 +62,14 @@
   <div class="index-buttons">
   <% if @book.review == nil %>
   <form action="/reviews/<%= @book.id() %>/new" method="get">
-    <input class="btn-main" type="submit" value="Review Book">
+    <input class="btn-sml-main" type="submit" value="Review Book">
   </form>
   <% else %>
   <form action="/reviews/<%= @book.review().id() %>/edit" method="get">
-    <input class="btn-main" type="submit" value="Edit Review">
+    <input class="btn-sml-main" type="submit" value="Edit Review">
   </form>
   <form action="/reviews/<%= @book.review().id() %>/delete" method="post">
-    <input class="btn-nav" type="submit" value="Delete Review">
+    <input class="btn-sml-highlight" type="submit" value="Delete Review">
   </form>
   <% end %>
   </div><hr />

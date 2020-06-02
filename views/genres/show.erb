@@ -5,7 +5,7 @@
       <input class="btn-main" type="submit" value="Edit Genre">
     </form>
     <form action="/genres/<%= @genre.id() %>/delete" method="post">
-      <input class="btn-nav" type="submit" value="Delete Genre">
+      <input class="btn-highlight" type="submit" value="Delete Genre">
     </form>
     <h2>Books:</h2>
     <% for book in @genre.books() %>

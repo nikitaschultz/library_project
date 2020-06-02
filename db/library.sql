@@ -42,14 +42,14 @@ CREATE TABLE books (
   read_status_id INT REFERENCES read_statuses(id) ON DELETE CASCADE,
   ownership_status_id INT REFERENCES ownership_statuses(id) ON DELETE CASCADE,
   series_id INT REFERENCES serieses(id) ON DELETE CASCADE,
-  series_number TINYINT
+  series_number INT
 );
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   book_id INT REFERENCES books(id) ON DELETE CASCADE,
   review TEXT,
-  rating TINYINT
+  rating INT
 );
 
 CREATE TABLE tags(

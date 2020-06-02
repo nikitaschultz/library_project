@@ -1,0 +1,147 @@
+
+.btn-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 85px;
+  height: 20px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+}
+
+.btn-nav:hover {
+  background-color: cornflowerblue;
+  color: white;
+  border: solid 1px white;
+}
+
+.btn-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 85px;
+  height: 22px;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  border: solid 1px white;
+  font-size: 14px;
+}
+
+.btn-main:hover {
+  background-color: white;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+}
+
+.btn-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 85px;
+  height: 22px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 5px;
+  text-decoration: none;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+  font-size: 14px;
+}
+
+.btn-highlight:hover {
+  background-color: cornflowerblue;
+  color: white;
+  border: solid 1px white;
+}
+
+.btn-lrg-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 25px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+}
+
+.btn-lrg-highlight:hover {
+  background-color: cornflowerblue;
+  color: white;
+  border: solid 1px white;
+}
+
+.btn-lrg-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 25px;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 3px;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  border: solid 1px white;
+}
+
+.btn-lrg-main:hover {
+  background-color: white;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+}
+
+.btn-sml-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 19px;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  border: solid 1px white;
+  font-size: 13px;
+}
+
+.btn-sml-main:hover {
+  background-color: white;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+}
+
+.btn-sml-highlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  height: 19px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 5px;
+  text-decoration: none;
+  color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+  font-size: 13px;
+}
+
+.btn-sml-highlight:hover {
+  background-color: cornflowerblue;
+  color: white;
+  border: solid 1px white;
+}

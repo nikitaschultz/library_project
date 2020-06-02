@@ -5,7 +5,7 @@
       <input class="btn-main" type="submit" value="Edit Tag">
     </form>
     <form action="/tags/<%= @tag.id() %>/delete" method="post">
-      <input class="btn-nav" type="submit" value="Delete Tag">
+      <input class="btn-highlight" type="submit" value="Delete Tag">
     </form>
     <h2>Books:</h2>
     <% for book in @tag.books() %>
