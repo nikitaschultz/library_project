@@ -1,16 +1,23 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
+    <div class="title-centered">
     <h1>Books: <%= @rating %>+ Stars</h1>
+    </div>
+
     <% for book in @books %>
     <h2><%= book.title() %>
       <% if(book.series() != nil) %>
       (<%= book.series().name() %> #<%= book.series_number() %>)
       <% end %>
     </h2>
-    <h3><%= book.review().rating() %> Stars</h3>
+
+    <h3><%= "★" * book.review().rating().to_i %></h3>
     <h3><%= book.author().full_name() %></h3>
+
+    <div class="index-buttons">
     <a class="btn-main" href="/books/<%= book.id() %>">View</a>
+    </div>
     <hr />
     <% end %>
 

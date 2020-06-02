@@ -1,12 +1,16 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>All Books</h1>
+    <div class="title-centered">
+      <h1>All Books</h1>
+    </div>
     <% for book in @books %>
     <h2><%= book.title() %></h2>
     <h3><%= book.author().full_name %></h3>
-    <a class="btn-main" href="/books/<%= book.id() %>">View</a>
-    <a class="btn-nav" href="/reviews/<%= book.id() %>/new">Review</a>
+    <div class="index-buttons">
+      <a class="btn-main" href="/books/<%= book.id() %>">View</a>
+      <a class="btn-nav" href="/reviews/<%= book.id() %>/new">Review</a>
+    </div>
     <hr />
     <% end %>
 

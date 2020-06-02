@@ -1,6 +1,11 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
+    <div class="title-centered">
+      <h1>Edit Book</h1>
+    </div>
+
+
 <form action="/books/<%= @book.id() %>" method="post">
 
   <label for="title">Title:</label><br>
@@ -21,23 +26,20 @@
     <% end %>
   </select><br><br>
 
-<h2>Read status:</h2>
-<label for="read_status"></label>
+<label for="read_status">Read status:</label>
 <select id="read_status" name="read_status_id">
   <% for read_status in @read_statuses %>
   <option <%= "selected" if read_status.id() == @book.read_status().id()%> value="<%= read_status.id() %>"><%= read_status.name() %></option>
   <% end %>
 </select><br><br>
 
-<h2>Ownership status:</h2>
-<label for="ownership_status"></label>
+<label for="ownership_status">Ownership Status:</label>
 <select id="ownership_status" name="ownership_status_id">
   <% for ownership_status in @ownership_statuses %>
   <option <%= "selected" if ownership_status.id() == @book.ownership_status().id()%> value="<%= ownership_status.id() %>"><%= ownership_status.name() %></option>
   <% end %>
 </select><br><br>
 
-<h2>Series details:</h2>
 <label for="series_name">Series Name:</label>
 <select id="series_name" name="series_id">
   <option selected value="nill">N/A</option>

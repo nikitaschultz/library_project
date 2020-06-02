@@ -1,18 +1,27 @@
 body {
-  font-family: "Lucinda Console", Monaco, monospace;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 0px;
 }
 
 .navigation-pane {
+  left: 0%;
+  top: 0%;
   display: flex;
   flex: 1;
   flex-direction: row;
   background-color: cornflowerblue;
-  height: 7vh;
+  height: 8vh;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   overflow: scroll;
   width: 100%;
+}
+
+.navigation-space {
+  top: 0%;
+  left: 0%;
+  height: 8vh;
 }
 
 .navigation-left ul {
@@ -31,36 +40,36 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 20px;
 }
 
 .btn-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  min-width: 85px;
   background-color: cornflowerblue;
+  border-radius: 15px;
   padding: 3px;
-  margin: 0px;
+  margin: 5px;
   text-decoration: none;
   color: white;
   border: solid 1px white;
-  border-radius: 15px;
-  text-align: center;
 }
 
 .btn-main:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  min-width: 85px;
   background-color: white;
+  border-radius: 15px;
   padding: 3px;
-  margin: 0px;
+  margin: 5px;
   text-decoration: none;
   color: cornflowerblue;
   border: solid 1px cornflowerblue;
-  border-radius: 15px;
-  text-align: center;
 }
 
 .btn-nav:hover a {
@@ -71,7 +80,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  min-width: 85px;
   background-color: white;
   border-radius: 15px;
   padding: 3px;
@@ -85,7 +94,7 @@ body {
   color: white;
   border: solid 1px white;
   background-color: cornflowerblue;
-  width: 80px;
+  min-width: 85px;
   text-align: center;
   padding: 3px;
   margin: 5px;
@@ -98,52 +107,76 @@ ul {
   margin: 0px
 }
 
-.page-footer p {
+.page-footer {
   bottom: 0%;
+  left: 0%;
   background-color: cornflowerblue;
   overflow: hidden;
   position: fixed;
-  height: 10px;
-  width: 100%;
+  height: 30px;
+  width: 100vw;
 }
 
 .homepage {
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 100%;
+}
+
+.homepage-content {
+  text-align: center;
+}
+
+#homepage-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.index-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.show-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .pageview {
   display: flex;
   justify-content: center;
   background-color: gainsboro;
-  min-height: 90vh;
+  min-height: 89vh;
 }
 
 .pagecontent {
   width: 40vw;
   background-color: white;
-  padding: 20px;
-  border-radius: 3%;
-  margin: 30px 0px;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 10px 0px;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 25px;
+  margin: 5px;
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 20px;
+  margin: 3px;
 }
 
 h3 {
-  font-size: 13px;
+  font-size: 17px;
 }
 
 p {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 a {

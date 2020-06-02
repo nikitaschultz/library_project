@@ -6,6 +6,15 @@
     <h2><%= @book.author().full_name() %></h2>
   </div>
 
+  <div class="show-buttons">
+    <form action="/books/<%= @book.id() %>/edit" method="get">
+      <input class="btn-main" type="submit" value="Edit Book">
+    </form>
+    <form action="/books/<%= @book.id() %>/delete" method="post">
+      <input class="btn-nav" type="submit" value="Delete Book">
+    </form>
+  </div>
+
   <h3>Genre:</h3>
   <p><%= @book.genre().name() %></p>
 
@@ -22,50 +31,49 @@
   <h3>Tags:</h3>
   <ul>
     <% @book.books_tags().each do |book_tag| %>
+    <div class="index-buttons">
     <li><%= book_tag.tag().name() %>
     <form action="/book_tag/<%= book_tag.id() %>/delete" method="post">
-    <input type="submit" value="Delete Tag">
-    </form></li>
+    <input class="btn-nav" type="submit" value="Delete Tag">
+    </form></li></div>
     <% end %>
-  </ul>
+  </ul><hr />
 
   <form id="book_tag_add" action="/book_tag" method="post">
+    <div class="index-buttons">
     <select id="book_tag_add" name="tag_id">
       <% for tag in @book.tags_not_used() %>
       <option value="<%= tag.id() %>"><%= tag.name() %></option>
       <% end %>
     </select>
     <input type="hidden" name="book_id" value="<%= @book.id() %>">
-    <input type="submit" value="Add Tag">
-  </form>
+    <input class="btn-main" type="submit" value="Add Tag">
+    </div>
+  </form><hr />
 
   <h3>Review:</h3>
   <% if(@book.review() == nil) %>
   <p>N/A</p>
   <% else %>
-  <p><%= @book.review().rating() %> stars </p>
+  <p><%= "★" * @book.review().rating().to_i %></p>
   <p>"<%= @book.review().review() %>"</p>
   <% end %>
 
+  <div class="index-buttons">
   <% if @book.review == nil %>
   <form action="/reviews/<%= @book.id() %>/new" method="get">
-    <input type="submit" value="Review Book">
+    <input class="btn-main" type="submit" value="Review Book">
   </form>
   <% else %>
   <form action="/reviews/<%= @book.review().id() %>/edit" method="get">
-    <input type="submit" value="Edit Review">
+    <input class="btn-main" type="submit" value="Edit Review">
   </form>
   <form action="/reviews/<%= @book.review().id() %>/delete" method="post">
-    <input type="submit" value="Delete Review">
+    <input class="btn-nav" type="submit" value="Delete Review">
   </form>
   <% end %>
+  </div><hr />
 
-  <form action="/books/<%= @book.id() %>/edit" method="get">
-    <input type="submit" value="Edit Book">
-  </form>
-  <form action="/books/<%= @book.id() %>/delete" method="post">
-    <input type="submit" value="Delete Book">
-  </form>
 
   </div>
 </div>
