@@ -6,7 +6,7 @@ body {
 .navigation-pane {
   display: flex;
   flex-direction: row;
-  background-color: cornflowerblue;
+  background: linear-gradient(to right, orange 0%, #ffbc40 50%, orange 100%);
   height: 8vh;
   align-items: center;
   justify-content: space-between;
@@ -24,11 +24,20 @@ body {
 .navigation-left ul {
   display: flex;
   flex: 1;
+  width: 30vw;
+}
+
+.navigation-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
 }
 
 .navigation-right ul {
   display: flex;
   flex: 1;
+  width: 30vw;
 }
 
 .title-centered {
@@ -49,7 +58,7 @@ ul {
 .page-footer {
   bottom: 0%;
   left: 0%;
-  background-color: cornflowerblue;
+  background: linear-gradient(to right, orange 0%, #ffbc40 50%, orange 100%);
   overflow: hidden;
   position: fixed;
   height: 30px;
@@ -145,7 +154,7 @@ ul {
   justify-content: flex-start;
 }
 
-.gimme-box {
+.gimme-box, .view-box{
   display: flex;
   align-items: center;
   justify-content: flex-start;

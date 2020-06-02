@@ -1,7 +1,9 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Books: <%= @read_status.name() %></h1>
+    <div class="title-centered">
+      <h1>Books: <%= @read_status.name() %></h1>
+    </div>
     <% for book in @books %>
     <h2><%= book.title() %>
       <% if(book.series() != nil) %>
@@ -9,8 +11,10 @@
       <% end %>
     </h2>
     <h3><%= book.author().full_name %></h3>
-    <a class="btn-main" href="/books/<%= book.id() %>">View</a>
-    <a class="btn-highlight" href="/reviews/<%= book.id() %>/new">Review</a>
+    <div class="index-buttons">
+      <a class="btn-main" href="/books/<%= book.id() %>">View</a>
+      <a class="btn-highlight" href="/reviews/<%= book.id() %>/new">Review</a>
+    </div>
     <hr />
     <% end %>
 

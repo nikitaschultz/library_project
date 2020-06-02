@@ -9,12 +9,12 @@
   padding: 3px;
   margin: 5px;
   text-decoration: none;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px darkorange;
 }
 
 .btn-nav:hover a {
-  background-color: cornflowerblue;
+  background-color: orange;
   color: white;
   border: solid 1px white;
 }
@@ -25,7 +25,7 @@
   align-items: center;
   min-width: 85px;
   height: 22px;
-  background-color: cornflowerblue;
+  background-color: orange;
   border-radius: 15px;
   margin: 5px;
   text-decoration: none;
@@ -36,8 +36,8 @@
 
 .btn-main:hover {
   background-color: white;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
 }
 
 .btn-highlight {
@@ -50,13 +50,13 @@
   border-radius: 15px;
   margin: 5px;
   text-decoration: none;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
   font-size: 14px;
 }
 
 .btn-highlight:hover {
-  background-color: cornflowerblue;
+  background-color: orange;
   color: white;
   border: solid 1px white;
 }
@@ -72,12 +72,12 @@
   padding: 3px;
   margin: 5px;
   text-decoration: none;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
 }
 
 .btn-lrg-highlight:hover {
-  background-color: cornflowerblue;
+  background-color: orange;
   color: white;
   border: solid 1px white;
 }
@@ -88,7 +88,7 @@
   align-items: center;
   width: 105px;
   height: 25px;
-  background-color: cornflowerblue;
+  background-color: orange;
   border-radius: 15px;
   padding: 3px;
   margin: 5px;
@@ -99,8 +99,8 @@
 
 .btn-lrg-main:hover {
   background-color: white;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
 }
 
 .btn-sml-main {
@@ -109,7 +109,7 @@
   align-items: center;
   min-width: 80px;
   height: 19px;
-  background-color: cornflowerblue;
+  background-color: orange;
   border-radius: 15px;
   margin: 5px;
   text-decoration: none;
@@ -120,8 +120,8 @@
 
 .btn-sml-main:hover {
   background-color: white;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
 }
 
 .btn-sml-highlight {
@@ -134,13 +134,13 @@
   border-radius: 15px;
   margin: 5px;
   text-decoration: none;
-  color: cornflowerblue;
-  border: solid 1px cornflowerblue;
+  color: darkorange;
+  border: solid 1px orange;
   font-size: 13px;
 }
 
 .btn-sml-highlight:hover {
-  background-color: cornflowerblue;
+  background-color: orange;
   color: white;
   border: solid 1px white;
 }

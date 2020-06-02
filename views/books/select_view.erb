@@ -3,23 +3,26 @@
 
     <div class="title-centered">
       <h1>Library</h1>
+      <div class="show-buttons">
+        <a class="btn-highlight" href="/books/view/<%= OwnershipStatus.find_by_name("Bookshelf").id() %>">View All</a>
+      </div>
     </div>
 
     <h2>View books by:</h2>
 
-    <form action="/books/author" method="post">
-      <label for="author">Author:</label><br>
-      <select id="author" name="author_id">
+    <form class="view-box" action="/books/author" method="post">
+      <label class="fixed-label" for="author">Author:</label><br>
+      <select class="dropdown" id="author" name="author_id">
         <% for author in @authors %>
         <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
         <% end %>
       </select>
       <input class="btn-main" type="submit" value="View">
-    </form><br>
+    </form>
 
-    <form action="/books/genre" method="post">
-      <label for="genre">Genre:</label><br>
-      <select id="genre" name="genre_id">
+    <form class="view-box" action="/books/genre" method="post">
+      <label class="fixed-label" for="genre">Genre:</label><br>
+      <select class="dropdown" id="genre" name="genre_id">
         <% for genre in @genres %>
         <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
         <% end %>
@@ -27,9 +30,9 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form action="/books/series" method="post">
-      <label for="series">Series:</label><br>
-      <select id="series" name="series_id">
+    <form class="view-box" action="/books/series" method="post">
+      <label class="fixed-label" for="series">Series:</label><br>
+      <select class="dropdown" id="series" name="series_id">
         <% for series in @serieses %>
         <option id="series" value="<%= series.id() %>"><%= series.name() %></option>
         <% end %>
@@ -37,9 +40,9 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form action="/books/read_status" method="post">
-      <label for="read_status">Read Status:</label><br>
-      <select id="read_status" name="read_status_id">
+    <form class="view-box" action="/books/read_status" method="post">
+      <label class="fixed-label" for="read_status">Read Status:</label><br>
+      <select class="dropdown" id="read_status" name="read_status_id">
         <% for read_status in @read_statuses %>
         <option id="read_status" value="<%= read_status.id() %>"><%= read_status.name() %></option>
         <% end %>
@@ -47,9 +50,9 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form action="/books/tag" method="post">
-      <label for="tag">Tag:</label><br>
-      <select id="tag" name="tag_id">
+    <form class="view-box" action="/books/tag" method="post">
+      <label class="fixed-label" for="tag">Tag:</label><br>
+      <select class="dropdown" id="tag" name="tag_id">
         <% for tag in @tags %>
         <option id="tag" value="<%= tag.id() %>"><%= tag.name() %></option>
         <% end %>
@@ -59,17 +62,15 @@
 
     <h2>View by review:</h2>
 
-    <form action="/books/rating" method="post">
-      <label for="rating">Rating:</label><br>
-      <select id="rating" name="rating_number">
+    <form class="view-box" action="/books/rating" method="post">
+      <label class="fixed-label" for="rating">Rating:</label><br>
+      <select class="dropdown" id="rating" name="rating_number">
         <% for rating in @ratings %>
         <option id="rating" value="<%= rating %>"><%= rating %>+ Stars</option>
         <% end %>
       </select>
       <input class="btn-main" type="submit" value="View">
     </form>
-
-    <h2><a class="btn-highlight" href="/books/view/<%= OwnershipStatus.find_by_name("Bookshelf").id() %>">View All</a></h2>
 
   </div>
 </div>

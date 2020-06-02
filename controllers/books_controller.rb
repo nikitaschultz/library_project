@@ -111,6 +111,10 @@ get '/books/:id/edit' do
 end
 
 post '/books/:id' do
+  if params[:series_id] == "nill"
+    params.delete("series_id")
+    params.delete("series_number")
+  end
   book = Book.new(params)
   book.update()
   redirect("books/#{book.id()}")
