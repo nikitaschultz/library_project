@@ -44,6 +44,7 @@ body {
   margin: 20px;
 }
 
+
 ul {
   list-style-type: none;
   padding: 0px;
@@ -114,7 +115,19 @@ ul {
   height: 20px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 13px;
-  text-decoration: bold;
+  align-items: center;
+}
+
+.text-field {
+  align-items: center;
+  background-color: white;
+  border: solid 1px lightslategrey;
+  color: black;
+  border-radius: 5px;
+  width: 200px;
+  height: 18px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 13px;
 }
 
 #tag-item {
@@ -128,7 +141,6 @@ ul {
   width: 200px;
   height: 20px;
   font-size: 13px;
-  text-decoration: bold;
   padding-left: 5px;
 }
 
@@ -136,6 +148,17 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.fixed-label {
+  width: 110px;
+  display: inline-block;
+}
+
+label {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 h1 {

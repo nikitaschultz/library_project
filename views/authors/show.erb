@@ -1,12 +1,16 @@
 <div class = "pageview">
   <div class = "pagecontent">
-    <h1><%= @author.full_name() %></h1>
-    <form action="/authors/<%= @author.id() %>/edit" method="get">
-      <input class="btn-main" type="submit" value="Edit Author">
-    </form>
-    <form action="/authors/<%= @author.id() %>/delete" method="post">
-      <input class="btn-highlight" type="submit" value="Delete Author">
-    </form>
+    <div class="title-centered">
+      <h1><%= @author.full_name() %></h1>
+    </div>
+    <div class="show-buttons">
+      <form action="/authors/<%= @author.id() %>/edit" method="get">
+        <input class="btn-lrg-main" type="submit" value="Edit Author">
+      </form>
+      <form action="/authors/<%= @author.id() %>/delete" method="post">
+        <input class="btn-lrg-highlight" type="submit" value="Delete Author">
+      </form>
+    </div>
     <h2>Books:</h2>
     <% for book in @author.books() %>
     <h3><%= book.title() %>

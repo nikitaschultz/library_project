@@ -1,13 +1,17 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Edit Author</h1>
+    <div class="title-centered">
+      <h1>Edit Author</h1>
+    </div>
     <form action="/authors/<%= @author.id() %>" method="post">
-      <label for="first_name">First Name:</label>
-      <input id="first_name" type="text" name="first_name" value="<%= @author.first_name %>">
-      <label for="last_name">Last Name:</label>
-      <input id="last_name" type="text" name="last_name" value="<%= @author.last_name %>">
-      <input type='submit' value="Update">
+      <label class="fixed-label" for="first_name">First Name:</label>
+      <input class="text-input" id="first_name" type="text" name="first_name" value="<%= @author.first_name %>"><br><br>
+      <label class="fixed-label" for="last_name">Last Name:</label>
+      <input class="text-input" id="last_name" type="text" name="last_name" value="<%= @author.last_name %>">
+      <div class="title-centered">
+        <input class="btn-main" type='submit' value="Update">
+      </div>
     </form>
 
   </div>

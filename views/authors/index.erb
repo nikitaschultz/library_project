@@ -1,14 +1,18 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Authors</h1>
-    <form action="/authors/new" method="get">
-      <input class="btn-highlight" type="submit" value="New Author">
-    </form>
+    <div class="title-centered">
+      <h1>Authors</h1>
+      <form action="/authors/new" method="get">
+        <input class="btn-lrg-highlight" type="submit" value="New Author">
+      </form>
+    </div>
 
     <% for author in @authors %>
     <h3><%= author.full_name() %></h3>
-    <a href="/authors/<%= author.id() %>">View</a>
+    <div class="index-buttons">
+      <a class="btn-main" href="/authors/<%= author.id() %>">View</a>
+    </div>
     <hr />
     <% end %>
 
