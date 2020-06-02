@@ -60,6 +60,9 @@
   </form>
   <% end %>
 
+  <form action="/books/<%= @book.id() %>/edit" method="get">
+    <input type="submit" value="Edit Book">
+  </form>
   <form action="/books/<%= @book.id() %>/delete" method="post">
     <input type="submit" value="Delete Book">
   </form>

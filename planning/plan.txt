@@ -52,3 +52,4 @@ X Create seeds file
 - Amend seeds file
 
 ADD BUTTON TO PURCHASED ON WISHLIST
+ADD "BACK TO TAGS" ETC. FROM SHOW PAGE

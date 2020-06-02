@@ -1,6 +1,12 @@
 <div class = "pageview">
   <div class = "pagecontent">
     <h1><%= @series.name() %></h1>
+    <form action="/serieses/<%= @series.id() %>/edit" method="get">
+      <input class="btn-main" type="submit" value="Edit Series">
+    </form>
+    <form action="/serieses/<%= @series.id() %>/delete" method="post">
+      <input class="btn-main" type="submit" value="Delete Series">
+    </form>
     <h2>Books:</h2>
     <% for book in @series.books() %>
     <h3><%= book.title() %>
@@ -12,11 +18,6 @@
     <p><%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
-    <form action="/serieses/<%= @series.id() %>/edit" method="get">
-      <input type="submit" value="Edit Series">
-    </form>
-    <form action="/serieses/<%= @series.id() %>/delete" method="post">
-      <input type="submit" value="Delete Series">
-    </form>
+
   </div>
 </div>

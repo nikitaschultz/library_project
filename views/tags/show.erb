@@ -1,6 +1,12 @@
 <div class = "pageview">
   <div class = "pagecontent">
     <h1><%= @tag.name() %></h1>
+    <form action="/tags/<%= @tag.id() %>/edit" method="get">
+      <input class="btn-main" type="submit" value="Edit Tag">
+    </form>
+    <form action="/tags/<%= @tag.id() %>/delete" method="post">
+      <input class="btn-nav" type="submit" value="Delete Tag">
+    </form>
     <h2>Books:</h2>
     <% for book in @tag.books() %>
     <h3><%= book.title() %>
@@ -12,11 +18,6 @@
     <p><%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
     <hr />
     <% end %>
-    <form action="/tags/<%= @tag.id() %>/edit" method="get">
-      <input class="btn-main" type="submit" value="Edit Tag">
-    </form>
-    <form action="/tags/<%= @tag.id() %>/delete" method="post">
-      <input class="btn-nav" type="submit" value="Delete Tag">
-    </form>
+
   </div>
 </div>
