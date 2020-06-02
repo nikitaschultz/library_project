@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require_relative('./models/gimme')
 require_relative('./models/quote')
 require_relative('./controllers/books_controller')
 require_relative('./controllers/authors_controller')

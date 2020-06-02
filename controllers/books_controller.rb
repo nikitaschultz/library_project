@@ -34,7 +34,7 @@ get '/books/view/:ownership_status_id' do
   erb(:"books/by_ownership_status")
 end
 
-post '/books/author' do
+get '/books/author' do
   redirect("/books/author/#{params["author_id"]}")
 end
 
@@ -44,7 +44,7 @@ get '/books/author/:author_id' do
   erb(:"books/by_author")
 end
 
-post '/books/genre' do
+get '/books/genre' do
   redirect("/books/genre/#{params["genre_id"]}")
 end
 
@@ -54,7 +54,7 @@ get '/books/genre/:genre_id' do
   erb(:"books/by_genre")
 end
 
-post '/books/series' do
+get '/books/series' do
   redirect("/books/series/#{params["series_id"]}")
 end
 
@@ -64,7 +64,7 @@ get '/books/series/:series_id' do
   erb(:"books/by_series")
 end
 
-post '/books/read_status' do
+get '/books/read_status' do
   redirect("/books/read_status/#{params["read_status_id"]}")
 end
 
@@ -74,7 +74,7 @@ get '/books/read_status/:read_status_id' do
   erb(:"books/by_read_status")
 end
 
-post '/books/tag' do
+get '/books/tag' do
   redirect("/books/tag/#{params["tag_id"]}")
 end
 
@@ -84,7 +84,7 @@ get '/books/tag/:tag_id' do
   erb(:"books/by_tag")
 end
 
-post '/books/rating' do
+get '/books/rating' do
   redirect("/books/rating/#{params["rating_number"]}")
 end
 

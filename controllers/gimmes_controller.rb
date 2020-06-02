@@ -1,105 +1,86 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/book')
+require_relative('../models/gimme')
 also_reload('../models/*')
 
 
 get '/gimme' do
-  @wishlist = OwnershipStatus.find_by_name("Wishlist")
-  @wishlist_author_ids = @wishlist.books().map{|book| book.author.id()}.uniq()
-  @wishlist_authors = @wishlist_author_ids.map{|author_id| Author.find(author_id)}
-  @wishlist_genre_ids = @wishlist.books().map{|book| book.genre.id()}.uniq()
-  @wishlist_genres = @wishlist_genre_ids.map{|genre_id| Genre.find(genre_id)}
+  @wishlist_authors = Gimme.buy_authors()
+  @wishlist_genres = Gimme.buy_genres()
+  @wishlist_tags = Gimme.buy_tags()
 
-  @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
-  @not_started = ReadStatus.find_by_name("Not started")
-  @bookshelf_not_started_books = Book.includes(@bookshelf.books(), @not_started.books())
-  @not_started_author_ids = @bookshelf_not_started_books.map{|book| book.author.id()}.uniq()
-  @not_started_authors = @not_started_author_ids.map{|author_id| Author.find(author_id)}
-  @not_started_genre_ids = @bookshelf_not_started_books.map{|book| book.genre.id()}.uniq()
-  @not_started_genres = @not_started_genre_ids.map{|genre_id| Genre.find(genre_id)}
+  @read_authors = Gimme.read_authors()
+  @read_genres = Gimme.read_genres()
+  @read_tags = Gimme.read_tags()
 
-  @rated_author_ids = Book.find_by_rating(4).map{|book| book.author().id()}.uniq()
-  @rated_authors = @rated_author_ids.map{|author_id| Author.find(author_id)}
-  @rated_genre_ids = Book.find_by_rating(4).map{|book| book.genre().id()}.uniq()
-  @rated_genres = @rated_genre_ids.map{|genre_id| Genre.find(genre_id)}
-
+  @recommend_authors = Gimme.recommend_authors()
+  @recommend_genres = Gimme.recommend_genres()
+  @recommend_tags = Gimme.recommend_tags()
   erb(:"gimmes/select_view")
 end
 
-post '/gimme/anything' do
-  @all_books = Book.all()
-  sample_book_id = @all_books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/anything' do
+  book = Gimme.anything()
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/wishlist/author' do
-  @author = Author.find(params["author_id"])
-  @wishlist = OwnershipStatus.find_by_name("Wishlist")
-  @books = Book.includes(@wishlist.books(), @author.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/wishlist/author' do
+  book = Gimme.buy_author(params["author_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/wishlist/genre' do
-  @genre = Genre.find(params["genre_id"])
-  @wishlist = OwnershipStatus.find_by_name("Wishlist")
-  @books = Book.includes(@wishlist.books(), @genre.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/wishlist/genre' do
+  book = Gimme.buy_genre(params["genre_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/wishlist/anything' do
-  @wishlist = OwnershipStatus.find_by_name("Wishlist")
-  @books = @wishlist.books()
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/wishlist/tag' do
+  book = Gimme.buy_genre(params["tag_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/not_started/author' do
-  @author = Author.find(params["author_id"])
-  @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
-  @not_started = ReadStatus.find_by_name("Not started")
-  @bookshelf_not_started_books = Book.includes(@bookshelf.books(), @not_started.books())
-  @books = Book.includes(@bookshelf_not_started_books, @author.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/wishlist/anything' do
+  book = Gimme.buy()
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/not_started/genre' do
-  @genre = Genre.find(params["genre_id"])
-  @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
-  @not_started = ReadStatus.find_by_name("Not started")
-  @bookshelf_not_started_books = Book.includes(@bookshelf.books(), @not_started.books())
-  @books = Book.includes(@bookshelf_not_started_books, @genre.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/read/author' do
+  book = Gimme.read_author(params["author_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/not_started/anything' do
-  @bookshelf = OwnershipStatus.find_by_name("Bookshelf")
-  @not_started = ReadStatus.find_by_name("Not started")
-  @books = Book.includes(@bookshelf.books(), @not_started.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/read/genre' do
+  book = Gimme.read_genre(params["genre_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/recommend/author' do
-  @author = Author.find(params["author_id"])
-  @books = Book.includes(Book.find_by_rating(4), @author.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/read/tag' do
+  book = Gimme.read_tag(params["tag_id"])
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/recommend/genre' do
-  @genre = Genre.find(params["genre_id"])
-  @books = Book.includes(Book.find_by_rating(4), @genre.books())
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/read/anything' do
+  book = Gimme.read()
+  redirect("/books/#{book.id()}")
 end
 
-post '/gimme/recommend/anything' do
-  @books = Book.find_by_rating(4)
-  sample_book_id = @books.sample().id()
-  redirect("/books/#{sample_book_id}")
+get '/gimme/recommend/author' do
+  book = Gimme.recommend_author(params["author_id"])
+  redirect("/books/#{book.id()}")
+end
+
+get '/gimme/recommend/genre' do
+  book = Gimme.recommend_genre(params["genre_id"])
+  redirect("/books/#{book.id()}")
+end
+
+get '/gimme/recommend/tag' do
+  book = Gimme.recommend_tag(params["tag_id"])
+  redirect("/books/#{book.id()}")
+end
+
+get '/gimme/recommend/anything' do
+  book = Gimme.recommend()
+  redirect("/books/#{book.id()}")
 end

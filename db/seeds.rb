@@ -8,6 +8,7 @@ require_relative('../models/book')
 require_relative('../models/review')
 require_relative('../models/tag')
 require_relative('../models/book_tag')
+require_relative('../models/gimme')
 
 BookTag.delete_all()
 Review.delete_all()

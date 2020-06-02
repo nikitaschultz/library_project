@@ -10,7 +10,7 @@
 
     <h2>View books by:</h2>
 
-    <form class="view-box" action="/books/author" method="post">
+    <form class="view-box" action="/books/author" method="get">
       <label class="fixed-label" for="author">Author:</label><br>
       <select class="dropdown" id="author" name="author_id">
         <% for author in @authors %>
@@ -20,7 +20,7 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form class="view-box" action="/books/genre" method="post">
+    <form class="view-box" action="/books/genre" method="get">
       <label class="fixed-label" for="genre">Genre:</label><br>
       <select class="dropdown" id="genre" name="genre_id">
         <% for genre in @genres %>
@@ -30,7 +30,7 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form class="view-box" action="/books/series" method="post">
+    <form class="view-box" action="/books/series" method="get">
       <label class="fixed-label" for="series">Series:</label><br>
       <select class="dropdown" id="series" name="series_id">
         <% for series in @serieses %>
@@ -40,7 +40,7 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form class="view-box" action="/books/read_status" method="post">
+    <form class="view-box" action="/books/read_status" method="get">
       <label class="fixed-label" for="read_status">Read Status:</label><br>
       <select class="dropdown" id="read_status" name="read_status_id">
         <% for read_status in @read_statuses %>
@@ -50,7 +50,7 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
-    <form class="view-box" action="/books/tag" method="post">
+    <form class="view-box" action="/books/tag" method="get">
       <label class="fixed-label" for="tag">Tag:</label><br>
       <select class="dropdown" id="tag" name="tag_id">
         <% for tag in @tags %>
@@ -62,7 +62,7 @@
 
     <h2>View by review:</h2>
 
-    <form class="view-box" action="/books/rating" method="post">
+    <form class="view-box" action="/books/rating" method="get">
       <label class="fixed-label" for="rating">Rating:</label><br>
       <select class="dropdown" id="rating" name="rating_number">
         <% for rating in @ratings %>
