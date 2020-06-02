@@ -37,6 +37,8 @@ classic = Genre.new({"name" => "Classic"})
 classic.save()
 literaryfiction = Genre.new({"name" => "Literary Fiction"})
 literaryfiction.save()
+historicalfiction = Genre.new({"name" => "Historical Fiction"})
+historicalfiction.save()
 
 ####AUTHOR SEEDS
 patrickrothfuss = Author.new({"first_name" => "Patrick", "last_name" => "Rothfuss"})
@@ -59,6 +61,22 @@ lucyfoley = Author.new({"first_name" => "Lucy", "last_name" => "Foley"})
 lucyfoley.save()
 jamessacorey = Author.new({"first_name" => "James SA", "last_name" => "Corey"})
 jamessacorey.save()
+brandonsanderson = Author.new({"first_name" => "Brandon", "last_name" => "Sanderson"})
+brandonsanderson.save()
+yuvalnoahharari = Author.new({"first_name" => "Yuval Noah", "last_name" => "Harari"})
+yuvalnoahharari.save()
+madelinemilller = Author.new({"first_name" => "Madeline", "last_name" => "Miller"})
+madelinemilller.save()
+sallyrooney = Author.new({"first_name" => "Sally", "last_name" => "Rooney"})
+sallyrooney.save()
+maryshelley = Author.new({"first_name" => "Mary", "last_name" => "Shelley"})
+maryshelley.save()
+fscottfitzgerald = Author.new({"first_name" => "F. Scott", "last_name" => "Fitzgerald"})
+fscottfitzgerald.save()
+alexmichaelides = Author.new({"first_name" => "Alex", "last_name" => "Michaelides"})
+alexmichaelides.save()
+jeaninecummins = Author.new({"first_name" => "Jeanine", "last_name" => "Cummins"})
+jeaninecummins.save()
 
 ####SERIES SEEDS
 series1 = Series.new({"name" => "Kingkiller Chronicles"})
@@ -67,6 +85,8 @@ series2 = Series.new({"name" => "Farseer Trilogy"})
 series2.save()
 series3 = Series.new({"name" => "Cormoran Strike"})
 series3.save()
+series4 = Series.new({"name" => "Mistborn"})
+series4.save()
 
 notstarted = ReadStatus.find_by_name("Not started")
 finished = ReadStatus.find_by_name("Finished")
@@ -90,7 +110,7 @@ book1.save()
 book2 = Book.new({
   "title" => "The Book Thief",
   "author_id" => markuszusak.id(),
-  "genre_id" => literaryfiction.id(),
+  "genre_id" => historicalfiction.id(),
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id()
   })
@@ -181,6 +201,116 @@ book12 = Book.new({
   "ownership_status_id" => wishlist.id()
   })
 book12.save()
+book13 = Book.new({
+  "title" => "The Final Empire",
+  "author_id" => brandonsanderson.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series4.id(),
+  "series_number" => 1
+  })
+book13.save()
+book14 = Book.new({
+  "title" => "The God Delusion",
+  "author_id" => richarddawkins.id(),
+  "genre_id" => nonfiction.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book14.save()
+book15 = Book.new({
+  "title" => "Sapiens",
+  "author_id" => yuvalnoahharari.id(),
+  "genre_id" => nonfiction.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book15.save()
+book16 = Book.new({
+  "title" => "Homo Deus",
+  "author_id" => yuvalnoahharari.id(),
+  "genre_id" => nonfiction.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book16.save()
+book17 = Book.new({
+  "title" => "Circe",
+  "author_id" => madelinemilller.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => wishlist.id()
+  })
+book17.save()
+book18 = Book.new({
+  "title" => "The Guest List",
+  "author_id" => lucyfoley.id(),
+  "genre_id" => crime.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book18.save()
+book19 = Book.new({
+  "title" => "Frankenstein",
+  "author_id" => maryshelley.id(),
+  "genre_id" => classic.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book19.save()
+book20 = Book.new({
+  "title" => "The Great Gatsby",
+  "author_id" => fscottfitzgerald.id(),
+  "genre_id" => classic.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book20.save()
+book21 = Book.new({
+  "title" => "Normal People",
+  "author_id" => sallyrooney.id(),
+  "genre_id" => literaryfiction.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id()
+  })
+book21.save()
+book22 = Book.new({
+  "title" => "The Silent Patient",
+  "author_id" => alexmichaelides.id(),
+  "genre_id" => thriller.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => wishlist.id()
+  })
+book22.save()
+book23 = Book.new({
+  "title" => "American Dirt",
+  "author_id" => jeaninecummins.id(),
+  "genre_id" => literaryfiction.id(),
+  "read_status_id" => notstarted.id(),
+  "ownership_status_id" => wishlist.id()
+  })
+book23.save()
+book24 = Book.new({
+  "title" => "The Well of Ascension",
+  "author_id" => brandonsanderson.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series4.id(),
+  "series_number" => 2
+  })
+book24.save()
+book25 = Book.new({
+  "title" => "The Hero of Ages",
+  "author_id" => brandonsanderson.id(),
+  "genre_id" => fantasy.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "series_id" => series4.id(),
+  "series_number" => 3
+  })
+book25.save()
 
 review1 = Review.new({
   "book_id" => book3.id(),

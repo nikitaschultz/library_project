@@ -29,6 +29,22 @@ class Series
     return Series.new(pg_result[0])
   end
 
+  def Series.bookshelf()
+    series_ids = []
+    for book in Book.bookshelf()
+      if book.series() != nil
+        series_ids.push(book.series().id())
+      end
+    end
+    series_ids = series_ids.uniq()
+    if series_ids.length > 1
+      serieses = series_ids.map{|id| Series.find(id)}
+      return serieses.sort_by{|series| series.name()}
+    else
+      return []
+    end
+  end
+
   def save()
     sql = "INSERT INTO serieses (name) VALUES ($1) RETURNING *"
     values = [@name]

@@ -57,6 +57,11 @@ class Book
     return Book.new(pg_result[0])
   end
 
+  def Book.bookshelf()
+    bookshelf = OwnershipStatus.find_by_name("Bookshelf")
+    return Book.includes(Book.all(), bookshelf.books())
+  end
+
   def save()
     sql = "INSERT INTO books (title, author_id, genre_id, read_status_id, ownership_status_id, series_id, series_number) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
     values = [@title, @author_id, @genre_id, @read_status_id, @ownership_status_id, @series_id, @series_number]

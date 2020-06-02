@@ -18,11 +18,11 @@ get '/books/new' do
 end
 
 get '/books/view' do
-  @authors = Author.all()
-  @genres = Genre.all()
-  @serieses = Series.all()
+  @authors = Author.bookshelf()
+  @genres = Genre.bookshelf()
+  @serieses = Series.bookshelf()
   @read_statuses = ReadStatus.all()
-  @tags = Tag.all()
+  @tags = Tag.bookshelf()
   @ratings = [1, 2, 3, 4, 5]
   erb(:"books/select_view")
 end
@@ -40,7 +40,7 @@ end
 
 get '/books/author/:author_id' do
   @author = Author.find(params["author_id"])
-  @books = Book.includes(Book.all(), @author.books())
+  @books = Book.includes(Book.bookshelf(), @author.books())
   erb(:"books/by_author")
 end
 
@@ -50,7 +50,7 @@ end
 
 get '/books/genre/:genre_id' do
   @genre = Genre.find(params["genre_id"])
-  @books = Book.includes(Book.all(), @genre.books())
+  @books = Book.includes(Book.bookshelf(), @genre.books())
   erb(:"books/by_genre")
 end
 
@@ -60,7 +60,7 @@ end
 
 get '/books/series/:series_id' do
   @series = Series.find(params["series_id"])
-  @books = Book.includes(Book.all(), @series.books())
+  @books = Book.includes(Book.bookshelf(), @series.books())
   erb(:"books/by_series")
 end
 
@@ -70,7 +70,7 @@ end
 
 get '/books/read_status/:read_status_id' do
   @read_status = ReadStatus.find(params["read_status_id"])
-  @books = Book.includes(Book.all(), @read_status.books())
+  @books = Book.includes(Book.bookshelf(), @read_status.books())
   erb(:"books/by_read_status")
 end
 
@@ -80,7 +80,7 @@ end
 
 get '/books/tag/:tag_id' do
   @tag = Tag.find(params["tag_id"])
-  @books = Book.includes(Book.all(), @tag.books())
+  @books = Book.includes(Book.bookshelf(), @tag.books())
   erb(:"books/by_tag")
 end
 
@@ -90,7 +90,7 @@ end
 
 get '/books/rating/:rating_number' do
   @rating = params["rating_number"]
-  @books = Book.includes(Book.all(), Book.find_by_rating(params["rating_number"]))
+  @books = Book.includes(Book.bookshelf(), Book.find_by_rating(params["rating_number"]))
   erb(:"books/by_rating")
 end
 

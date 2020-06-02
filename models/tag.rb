@@ -28,6 +28,18 @@ class Tag
     return Tag.new(pg_result[0])
   end
 
+  def Tag.bookshelf()
+    all_tags = []
+    for book in Book.bookshelf()
+      for tag in book.tags()
+        all_tags.push(tag)
+      end
+    end
+    tag_ids = all_tags.map{|tag| tag.id() }.uniq
+    tags = tag_ids.map{|id| Tag.find(id)}
+    return tags.sort_by{|tag| tag.name()}
+  end
+
   def save()
     sql = "INSERT INTO tags (name) VALUES ($1) RETURNING *"
     values = [@name]

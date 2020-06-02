@@ -29,6 +29,12 @@ class Genre
     return Genre.new(pg_result[0])
   end
 
+  def Genre.bookshelf()
+    genre_ids = Book.bookshelf().map{|book| book.genre.id()}.uniq
+    genres = genre_ids.map{|id| Genre.find(id)}
+    return genres.sort_by{|genre| genre.name()}
+  end
+
   def save()
     sql = "INSERT INTO genres (name) VALUES ($1) RETURNING *"
     values = [@name]

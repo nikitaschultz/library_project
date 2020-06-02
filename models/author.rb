@@ -30,6 +30,12 @@ class Author
     return Author.new(pg_result[0])
   end
 
+  def Author.bookshelf()
+    author_ids = Book.bookshelf().map{|book| book.author.id()}.uniq
+    authors = author_ids.map{|id| Author.find(id)}
+    return authors.sort_by{|author| author.first_name()}
+  end
+
   def full_name
     return "#{@first_name} #{@last_name}"
   end
