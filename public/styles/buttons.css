@@ -1,5 +1,4 @@
-
-.btn-nav {
+.btn-nav a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +13,7 @@
   border: solid 1px cornflowerblue;
 }
 
-.btn-nav:hover {
+.btn-nav:hover a {
   background-color: cornflowerblue;
   color: white;
   border: solid 1px white;

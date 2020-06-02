@@ -1,86 +1,91 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Gimme!</h1>
+    <div class="title-centered">
+      <h1>Gimme!</h1>
+    </div>
+
     <p>Find your next book to read or buy, or a book you've rated highly to recommend to a friend!</p>
+    <div class="show-buttons">
     <form action="/gimme/anything" method="post">
-      <input type="submit" value="Gimme any book!">
-    </form><br>
+      <input class="btn-main" type="submit" value="Gimme any book!">
+    </form>
+    </div><br>
 
     <h2>I want to buy a book!</h2>
 
-    <form action="/gimme/<%= @wishlist.name().downcase() %>/author" method="post">
-      <label for="author">Author:</label><br>
-      <select id="author" name="author_id">
+    <form class="gimme-box" action="/gimme/<%= @wishlist.name().downcase() %>/author" method="post">
+      <label class="gimme-label" for="author">Author:</label>
+      <select class="dropdown" id="author" name="author_id">
         <% for author in @wishlist_authors %>
         <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
-    <form action="/gimme/<%= @wishlist.name().downcase() %>/genre" method="post">
-      <label for="genre">Genre:</label><br>
-      <select id="genre" name="genre_id">
+    <form class="gimme-box" action="/gimme/<%= @wishlist.name().downcase() %>/genre" method="post">
+      <label class="gimme-label" for="genre">Genre:</label><br>
+      <select class="dropdown" id="genre" name="genre_id">
         <% for genre in @wishlist_genres %>
         <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
     <form action="/gimme/<%= @wishlist.name().downcase() %>/anything" method="post">
-      <input type="submit" value="Gimme any!">
+      <input class="btn-main" type="submit" value="Gimme any!">
     </form><br>
 
     <h2>I want to read a book!</h2>
-    <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/author" method="post">
-      <label for="author">Author:</label><br>
-      <select id="author" name="author_id">
+    <form class="gimme-box" action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/author" method="post">
+      <label class="gimme-label" for="author">Author:</label><br>
+      <select class="dropdown" id="author" name="author_id">
         <% for author in @not_started_authors %>
         <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
-    <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/genre" method="post">
-      <label for="genre">Genre:</label><br>
-      <select id="genre" name="genre_id">
+    <form class="gimme-box" action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/genre" method="post">
+      <label class="gimme-label" for="genre">Genre:</label><br>
+      <select class="dropdown" id="genre" name="genre_id">
         <% for genre in @not_started_genres %>
         <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
     <form action="/gimme/<%= @not_started.name().downcase().gsub(" ", "_") %>/anything" method="post">
-      <input type="submit" value="Gimme any!">
+      <input class="btn-main" type="submit" value="Gimme any!">
     </form><br>
 
     <h2>I want to recommend a book!</h2>
-    <form action="/gimme/recommend/author" method="post">
-      <label for="author">Author:</label><br>
-      <select id="author" name="author_id">
+    <form class="gimme-box" action="/gimme/recommend/author" method="post">
+      <label class="gimme-label" for="author">Author:</label><br>
+      <select class="dropdown" id="author" name="author_id">
         <% for author in @rated_authors %>
         <option id="author" value="<%= author.id() %>"><%= author.full_name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
-    <form action="/gimme/recommend/genre" method="post">
-      <label for="genre">Genre:</label><br>
-      <select id="genre" name="genre_id">
+    <form class="gimme-box" action="/gimme/recommend/genre" method="post">
+      <label class="gimme-label" for="genre">Genre:</label><br>
+      <select class="dropdown" id="genre" name="genre_id">
         <% for genre in @rated_genres %>
         <option id="genre" value="<%= genre.id() %>"><%= genre.name() %></option>
         <% end %>
       </select>
-      <input type="submit" value="Gimme a book!">
-    </form><br>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
 
     <form action="/gimme/recommend/anything" method="post">
-      <input type="submit" value="Gimme any!">
+      <input class="btn-main" type="submit" value="Gimme any!">
     </form><br>
 
   </div>

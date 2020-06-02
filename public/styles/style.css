@@ -4,10 +4,7 @@ body {
 }
 
 .navigation-pane {
-  left: 0%;
-  top: 0%;
   display: flex;
-  flex: 1;
   flex-direction: row;
   background-color: cornflowerblue;
   height: 8vh;
@@ -27,13 +24,11 @@ body {
 .navigation-left ul {
   display: flex;
   flex: 1;
-  flex-direction: row,
 }
 
 .navigation-right ul {
   display: flex;
   flex: 1;
-  flex-direction: row;
 }
 
 .title-centered {
@@ -150,6 +145,17 @@ ul {
   justify-content: flex-start;
 }
 
+.gimme-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gimme-label {
+  width: 80px;
+  display: inline-block;
+}
+
 .fixed-label {
   width: 110px;
   display: inline-block;
@@ -181,5 +187,4 @@ p {
 
 a {
   text-decoration: none;
-  color: cornflowerblue;
 }

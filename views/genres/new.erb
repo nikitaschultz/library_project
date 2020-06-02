@@ -1,11 +1,15 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>New Genre</h1>
+    <div class="title-centered">
+      <h1>New Genre</h1>
+    </div>
     <form action="/genres" method="post">
-      <label for="genre_name">Genre:</label>
-      <input id="genre_name" type="text" name="name">
-      <input type='submit' value="Create">
+      <label class="fixed-label" for="genre_name">Genre:</label>
+      <input class="text-field" id="genre_name" type="text" name="name"><br><br>
+      <div class="title-centered">
+        <input class="btn-main" type='submit' value="Create">
+      </div>
     </form>
 
   </div>

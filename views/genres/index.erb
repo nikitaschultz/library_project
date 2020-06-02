@@ -1,14 +1,18 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Genres</h1>
+    <div class="title-centered">
+      <h1>Genres</h1>
     <form action="/genres/new" method="get">
       <input class="btn-highlight" type="submit" value="New Genre">
     </form>
+    </div>
 
     <% for genre in @genres %>
     <h2><%= genre.name() %></h2>
-    <a href="/genres/<%= genre.id() %>">View</a>
+    <div class="index-buttons">
+    <a class="btn-main" href="/genres/<%= genre.id() %>">View</a>
+    </div>
     <hr />
     <% end %>
 

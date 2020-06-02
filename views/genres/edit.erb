@@ -1,11 +1,13 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Edit Genre</h1>
+    <div class="title-centered">
+      <h1>Edit Genre</h1>
+    </div>
     <form action="/genres/<%= @genre.id() %>" method="post">
-      <label for="genre_name">Genre:</label>
-      <input id="genre_name" type="text" name="name" value="<%= @genre.name() %>">
-      <input type='submit' value="Update">
+      <label class="fixed-label" for="genre_name">Genre:</label>
+      <input class="text-field" id="genre_name" type="text" name="name" value="<%= @genre.name() %>">
+      <input class="btn-main" type='submit' value="Update">
     </form>
 
   </div>

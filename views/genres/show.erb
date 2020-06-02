@@ -1,12 +1,18 @@
 <div class = "pageview">
   <div class = "pagecontent">
-    <h1><%= @genre.name() %></h1>
+
+    <div class="title-centered">
+      <h1><%= @genre.name() %></h1>
+    </div>
+    <div class="show-buttons">
     <form action="/genres/<%= @genre.id() %>/edit" method="get">
       <input class="btn-main" type="submit" value="Edit Genre">
     </form>
     <form action="/genres/<%= @genre.id() %>/delete" method="post">
       <input class="btn-highlight" type="submit" value="Delete Genre">
     </form>
+    </div>
+
     <h2>Books:</h2>
     <% for book in @genre.books() %>
     <h3><%= book.title() %>
