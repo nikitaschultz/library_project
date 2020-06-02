@@ -1,12 +1,20 @@
 <div class = "pageview">
   <div class = "pagecontent">
-    <h1><%= @tag.name() %></h1>
-    <form action="/tags/<%= @tag.id() %>/edit" method="get">
-      <input class="btn-main" type="submit" value="Edit Tag">
-    </form>
-    <form action="/tags/<%= @tag.id() %>/delete" method="post">
-      <input class="btn-highlight" type="submit" value="Delete Tag">
-    </form>
+
+    <div class="title-centered">
+      <h1><%= @tag.name() %></h1>
+      <div class="show-buttons">
+        <form action="/tags/<%= @tag.id() %>/edit" method="get">
+          <input class="btn-main" type="submit" value="Edit Tag">
+        </form>
+        <form action="/tags/<%= @tag.id() %>/delete" method="post">
+          <input class="btn-highlight" type="submit" value="Delete Tag">
+        </form>
+      </div>
+    </div>
+
+
+
     <h2>Books:</h2>
     <% for book in @tag.books() %>
     <h3><%= book.title() %>

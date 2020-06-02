@@ -1,14 +1,18 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Tags</h1>
-    <form action="/tags/new" method="get">
-      <input class="btn-highlight" type="submit" value="New Tag">
-    </form>
+    <div class="title-centered">
+      <h1>Tags</h1>
+      <form action="/tags/new" method="get">
+        <input class="btn-highlight" type="submit" value="New Tag">
+      </form>
+    </div>
 
     <% for tag in @tags %>
     <h2><%= tag.name() %></h2>
-    <a href="/tags/<%= tag.id() %>">View</a>
+    <div class="index-buttons">
+      <a class="btn-main" href="/tags/<%= tag.id() %>">View</a>
+    </div>
     <hr />
     <% end %>
 

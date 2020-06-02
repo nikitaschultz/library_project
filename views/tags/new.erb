@@ -1,11 +1,16 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>New Tag</h1>
+    <div class="title-centered">
+      <h1>New Tag</h1>
+    </div>
+
     <form action="/tags" method="post">
-      <label for="tag_name">Tag:</label>
-      <input id="tag_name" type="text" name="name">
-      <input type='submit' value="Create">
+      <label class="fixed-label" for="tag_name">Tag:</label>
+      <input class="text-field" id="tag_name" type="text" name="name"><br><br>
+      <div class="show-buttons">
+        <input class="btn-main" type='submit' value="Create">
+      </div>
     </form>
 
   </div>
