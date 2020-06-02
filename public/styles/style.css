@@ -122,6 +122,19 @@ ul {
   align-items: center;
 }
 
+.large-field  {
+  width: 100%;
+  border: solid 1px lightslategrey;
+  color: black;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 13px;
+}
+
+.rating-label {
+  width: 50px;
+  display: inline-block;
+}
+
 .text-field {
   align-items: center;
   background-color: white;

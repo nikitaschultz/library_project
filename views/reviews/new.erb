@@ -1,18 +1,23 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Review</h1>
-    <h2><%= @book.title() %></h2>
-    <h3><%= @book.author().full_name() %></h3>
+    <div class="title-centered">
+      <h1>Review</h1>
+      <h2><%= @book.title() %></h2>
+      <h3><%= @book.author().full_name() %></h3>
+    </div>
     <form action="/reviews" method="post">
-      <label for="rating">Rating:</label>
-      <input id="rating" type="number" max="5" min="1" name="rating"><br>
+      <label class="rating-label" for="rating">Rating:</label>
+      <input class="rating-field" id="rating" type="number" max="5" min="1" name="rating"><br><br>
 
-      <label for="review">Review:</label>
-      <input id="rating" type="text" name="review">
+      <label class="gimme-label" for="review">Review:</label>
+      <textarea class="large-field" id="rating" rows="4" name="review"></textarea><br><br>
 
       <input type="hidden" name="book_id" value="<%= @book.id() %>">
-      <input type='submit' value="Submit Review">
+
+      <div class="show-buttons">
+        <input class="btn-main" type='submit' value="Submit Review">
+      </div>
     </form>
 
   </div>
