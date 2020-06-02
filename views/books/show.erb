@@ -41,7 +41,7 @@
 
   <form id="book_tag_add" action="/book_tag" method="post">
     <div class="index-buttons">
-    <select class="dropdown" id="book_tag_add" name="tag_id">
+    <select id="tag-dropdown" id="book_tag_add" name="tag_id">
       <% for tag in @book.tags_not_used() %>
       <option value="<%= tag.id() %>"><%= tag.name() %></option>
       <% end %>

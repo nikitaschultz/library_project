@@ -6,8 +6,10 @@
     </div>
     <form action="/genres/<%= @genre.id() %>" method="post">
       <label class="fixed-label" for="genre_name">Genre:</label>
-      <input class="text-field" id="genre_name" type="text" name="name" value="<%= @genre.name() %>">
-      <input class="btn-main" type='submit' value="Update">
+      <input class="text-field" id="genre_name" type="text" name="name" value="<%= @genre.name() %>"><br><br>
+      <div class="show-buttons">
+        <input class="btn-main" type='submit' value="Update">
+      </div>
     </form>
 
   </div>

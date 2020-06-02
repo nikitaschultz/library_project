@@ -1,14 +1,21 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>Series</h1>
-    <form action="/serieses/new" method="get">
-      <input class="btn-highlight" type="submit" value="New Series">
-    </form>
+    <div class="title-centered">
+      <h1>Series</h1>
+      <div class="show-buttons">
+        <form action="/serieses/new" method="get">
+          <input class="btn-highlight" type="submit" value="New Series">
+        </form>
+      </div>
+    </div>
+
 
     <% for series in @serieses %>
     <h3><%= series.name() %></h3>
-    <a href="/serieses/<%= series.id() %>">View</a>
+    <div class="index-buttons">
+      <a class="btn-main" href="/serieses/<%= series.id() %>">View</a>
+    </div>
     <hr />
     <% end %>
 

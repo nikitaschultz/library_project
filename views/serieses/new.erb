@@ -1,11 +1,15 @@
 <div class = "pageview">
   <div class = "pagecontent">
 
-    <h1>New Series</h1>
+    <div class="title-centered">
+      <h1>New Series</h1>
+    </div>
     <form action="/serieses" method="post">
-      <label for="series_name">Series:</label>
-      <input id="series_name" type="text" name="name">
-      <input type='submit' value="Create">
+      <label class="fixed-label" for="series_name">Series:</label>
+      <input class="text-field" id="series_name" type="text" name="name"><br>
+      <div class="show-buttons">
+        <input class="btn-main" type='submit' value="Create">
+      </div>
     </form>
 
   </div>
