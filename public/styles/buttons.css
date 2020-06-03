@@ -144,3 +144,34 @@
   color: white;
   border: solid 1px white;
 }
+
+.index-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.show-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.floating-back-button {
+  position: absolute;
+  left: 30vw;
+  top: 13vh;
+  border: none;
+  color: orange;
+  background-color: transparent;
+}
+
+.floating-add-button a {
+  position: absolute;
+  right: 30vw;
+  top: 13.5vh;
+  border: none;
+  color: orange;
+  background-color: transparent;
+}

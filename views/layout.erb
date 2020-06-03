@@ -5,6 +5,7 @@
     <title>📚BookBank📚</title>
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/structure.css">
   </head>
   <body>
     <main>
@@ -21,7 +22,7 @@
         <div class = "navigation-right">
           <ul>
             <div class="btn-nav"><li><a href="/books/new">New Book</a></li></div>
-            <div class="btn-nav"><li><a href="/books/view">Library</a></li></div>
+            <div class="btn-nav"><li><a href="/books/view">Bookshelf</a></li></div>
             <div class="btn-nav"><li><a href="/books/view/<%= OwnershipStatus.find_by_name("Wishlist").id() %>">Wishlist</a></li></div>
             <div class="btn-nav"><li><a href="/gimme">Gimme!</a></li></div>
           </ul>
