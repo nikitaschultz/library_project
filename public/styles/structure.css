@@ -24,20 +24,19 @@
 .navigation-left ul {
   display: flex;
   flex: 1;
-  width: 30vw;
+  width: 412px;
 }
 
 .navigation-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30vw;
 }
 
 .navigation-right ul {
   display: flex;
   flex: 1;
-  width: 30vw;
+  width: 412px;
 }
 
 .title-centered {

@@ -79,6 +79,10 @@ alexmichaelides = Author.new({"first_name" => "Alex", "last_name" => "Michaelide
 alexmichaelides.save()
 jeaninecummins = Author.new({"first_name" => "Jeanine", "last_name" => "Cummins"})
 jeaninecummins.save()
+lisajewell = Author.new({"first_name" => "Lisa", "last_name" => "Jewell"})
+lisajewell.save()
+peterjames = Author.new({"first_name" => "Peter", "last_name" => "James"})
+peterjames.save()
 
 ####SERIES SEEDS
 series1 = Series.new({"name" => "Kingkiller Chronicles"})
@@ -350,6 +354,33 @@ book25 = Book.new({
   "format_id" => paperback.id()
   })
 book25.save()
+book26 = Book.new({
+  "title" => "The Family Upstairs",
+  "author_id" => lisajewell.id(),
+  "genre_id" => thriller.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
+  })
+book26.save()
+book27 = Book.new({
+  "title" => "Then She Was Gone",
+  "author_id" => lisajewell.id(),
+  "genre_id" => thriller.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
+  })
+book27.save()
+book28 = Book.new({
+  "title" => "Dead Simple",
+  "author_id" => peterjames.id(),
+  "genre_id" => crime.id(),
+  "read_status_id" => finished.id(),
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => ebook.id()
+  })
+book28.save()
 
 review1 = Review.new({
   "book_id" => book3.id(),
@@ -375,20 +406,49 @@ review4 = Review.new({
   "review" => "Very scary and well plotted."
   })
 review4.save()
+review5 = Review.new({
+  "book_id" => book28.id(),
+  "rating" => 1,
+  "review" => "Terrible.  Pandering, boring and sexist."
+  })
+review5.save()
+review6 = Review.new({
+  "book_id" => book26.id(),
+  "rating" => 3,
+  "review" => "Not bad. Nicely paced and builds suspense well."
+  })
+review6.save()
+review7 = Review.new({
+  "book_id" => book7.id(),
+  "rating" => 5,
+  "review" => "Brilliant book.  Very well written and thought provoking."
+  })
+review7.save()
+review8 = Review.new({
+  "book_id" => book2.id(),
+  "rating" => 5,
+  "review" => "Beautiful, vivid read.  Completely devastating and wonderful."
+  })
+review8.save()
 
-tag1 = Tag.new("name" => "Page-turner")
+tag1 = Tag.new("name" => "Tear-jerker")
 tag1.save()
 tag2 = Tag.new("name" => "Whodunnit")
 tag2.save()
 tag3 = Tag.new("name" => "Detective Book")
 tag3.save()
 
-book_tag1 = BookTag.new({"book_id" => book4.id(), "tag_id" => tag1.id()})
+book_tag1 = BookTag.new({"book_id" => book3.id(), "tag_id" => tag1.id()})
 book_tag1.save()
 book_tag2 = BookTag.new({"book_id" => book11.id(), "tag_id" => tag2.id()})
 book_tag2.save()
 book_tag3 = BookTag.new({"book_id" => book8.id(), "tag_id" => tag3.id()})
 book_tag3.save()
+book_tag4 = BookTag.new({"book_id" => book28.id(), "tag_id" => tag3.id()})
+book_tag4.save()
+book_tag5 = BookTag.new({"book_id" => book2.id(), "tag_id" => tag1.id()})
+book_tag5.save()
+
 
 # binding.pry
 # nil
