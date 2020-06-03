@@ -1,4 +1,4 @@
-require('pry')
+# require('pry')
 require_relative('../models/genre')
 require_relative('../models/author')
 require_relative('../models/ownership_status')
@@ -390,6 +390,5 @@ book_tag2.save()
 book_tag3 = BookTag.new({"book_id" => book8.id(), "tag_id" => tag3.id()})
 book_tag3.save()
 
-
-binding.pry
-nil
+# binding.pry
+# nil

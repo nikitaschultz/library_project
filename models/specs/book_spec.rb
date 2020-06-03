@@ -13,12 +13,15 @@ class TestBook < MiniTest::Test
     @ownership_status1.save()
     @readstatus1 = ReadStatus.new({"name" => "Finished"})
     @readstatus1.save()
+    @format1 = Format.new({"name" => "Paperback"})
+    @format1.save()
     @series1 = Series.new({"name" => "Farseer Trilogy"})
     @series1.save()
     @book1 = Book.new({
       "title" => "Assassin's Apprentice",
       "author_id" => @author1.id(),
       "genre_id" => @genre1.id(),
+      "format_id" => @format.id(),
       "read_status_id" => @readstatus1.id(),
       "ownership_status_id" => @ownership_status1.id(),
       "series_id" => @series1.id(),
