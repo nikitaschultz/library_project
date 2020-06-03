@@ -202,6 +202,28 @@ ul {
   display: inline-block;
 }
 
+.floating-back-button {
+  position: fixed;
+  left: 30vw;
+  top: 13vh;
+  border: none;
+  color: orange;
+  background-color: transparent;
+}
+
+.floating-add-button a {
+  position: fixed;
+  right: 30vw;
+  top: 13.5vh;
+  border: none;
+  color: orange;
+  background-color: transparent;
+}
+
+.add-text {
+  font-size: 33px;
+}
+
 label {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 13px;
