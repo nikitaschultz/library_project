@@ -1,0 +1,16 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <div class="title-centered">
+      <h1>Edit Format</h1>
+    </div>
+    <form action="/formats/<%= @format.id() %>" method="post">
+      <label class="fixed-label" for="format_name">Format:</label>
+      <input class="text-field" id="format_name" type="text" name="name" value="<%= @format.name() %>"><br><br>
+      <div class="show-buttons">
+        <input class="btn-main" type='submit' value="Update">
+      </div>
+    </form>
+
+  </div>
+</div>

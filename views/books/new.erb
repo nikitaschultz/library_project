@@ -62,6 +62,13 @@
       <% end %>
     </select><br><br>
 
+    <label class="fixed-label" for="format">Format:</label>
+    <select class="dropdown" id="format" name="format_id">
+      <% for format in @formats %>
+      <option value="<%= format.id() %>"><%= format.name() %></option>
+      <% end %>
+    </select><br><br>
+
     <label class="fixed-label" for="series_name">Series Name:</label>
     <select class="dropdown" id="series_name" name="series_id">
       <option selected value="nill">N/A</option>

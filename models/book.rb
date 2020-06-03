@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('author')
 require_relative('genre')
+require_relative('format')
 require_relative('read_status')
 require_relative('ownership_status')
 require_relative('series')
@@ -9,14 +10,15 @@ require_relative('review')
 
 class Book
 
-  attr_reader :id, :author_id, :genre_id, :read_status_id, :series_id, :ownership_status_id
-  attr_accessor :title, :series_number
+  attr_reader :id
+  attr_accessor :title, :series_number, :author_id, :genre_id, :read_status_id, :series_id, :ownership_status_id, :format_id
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
     @title = options["title"]
     @author_id = options["author_id"]
     @genre_id = options["genre_id"]
+    @format_id = options["format_id"]
     @read_status_id = options["read_status_id"]
     @ownership_status_id = options["ownership_status_id"]
     @series_id = options["series_id"]
@@ -63,8 +65,8 @@ class Book
   end
 
   def save()
-    sql = "INSERT INTO books (title, author_id, genre_id, read_status_id, ownership_status_id, series_id, series_number) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *"
-    values = [@title, @author_id, @genre_id, @read_status_id, @ownership_status_id, @series_id, @series_number]
+    sql = "INSERT INTO books (title, author_id, genre_id, format_id, read_status_id, ownership_status_id, series_id, series_number) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *"
+    values = [@title, @author_id, @genre_id, @format_id, @read_status_id, @ownership_status_id, @series_id, @series_number]
     pg_result = SqlRunner.run(sql, values)
     @id = pg_result[0]["id"]
   end
@@ -76,8 +78,8 @@ class Book
   end
 
   def update()
-    sql = "UPDATE books SET (title, author_id, genre_id, read_status_id, ownership_status_id, series_id, series_number) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
-    values = [@title, @author_id, @genre_id, @read_status_id, @ownership_status_id, @series_id, @series_number, @id]
+    sql = "UPDATE books SET (title, author_id, genre_id, format_id, read_status_id, ownership_status_id, series_id, series_number) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9"
+    values = [@title, @author_id, @genre_id, @format_id, @read_status_id, @ownership_status_id, @series_id, @series_number, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -87,6 +89,10 @@ class Book
 
   def genre()
     return Genre.find(@genre_id)
+  end
+
+  def format()
+    return Format.find(@format_id)
   end
 
   def read_status()

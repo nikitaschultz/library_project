@@ -1,0 +1,33 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <div class="title-centered">
+      <h1><%= @format.name() %></h1>
+    </div>
+    <div class="show-buttons">
+    <form action="/formats/<%= @format.id() %>/edit" method="get">
+      <input class="btn-main" type="submit" value="Edit Format">
+    </form>
+    <form action="/formats/<%= @format.id() %>/delete" method="post">
+      <input class="btn-highlight" type="submit" value="Delete Format">
+    </form>
+    </div>
+
+    <h2>Books:</h2>
+    <% for book in @format.books() %>
+    <h3><%= book.title() %>
+      <% if(book.series() != nil) %>
+      (<%= book.series().name() %> #<%= book.series_number() %>)
+      <% end %>
+      </h3>
+    <p><%= book.author().full_name() %></p>
+    <p><%= book.genre().name() %>,<%= book.ownership_status().name() %>, <%= book.read_status().name() %></p>
+    <hr />
+    <% end %>
+
+    <div class="show-buttons">
+      <a class="btn-sml-highlight" href="/formats">All Formats</a>
+    </div>
+
+  </div>
+</div>

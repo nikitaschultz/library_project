@@ -14,6 +14,7 @@ get '/books/new' do
   @read_statuses = ReadStatus.all()
   @ownership_statuses = OwnershipStatus.all()
   @serieses = Series.all()
+  @formats = Format.all()
   erb(:"books/new")
 end
 
@@ -22,6 +23,7 @@ get '/books/view' do
   @genres = Genre.bookshelf()
   @serieses = Series.bookshelf()
   @read_statuses = ReadStatus.all()
+  @formats = Format.all()
   @tags = Tag.bookshelf()
   @ratings = [1, 2, 3, 4, 5]
   erb(:"books/select_view")
@@ -105,6 +107,7 @@ get '/books/:id/edit' do
   @genres = Genre.all()
   @read_statuses = ReadStatus.all()
   @ownership_statuses = OwnershipStatus.all()
+  @formats = Format.all()
   @serieses = Series.all()
   @book = Book.find(params["id"])
   erb(:"books/edit")

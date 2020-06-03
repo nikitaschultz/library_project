@@ -9,12 +9,14 @@ require_relative('../models/review')
 require_relative('../models/tag')
 require_relative('../models/book_tag')
 require_relative('../models/gimme')
+require_relative('../models/format')
 
 BookTag.delete_all()
 Review.delete_all()
 Book.delete_all()
 Tag.delete_all()
 Genre.delete_all()
+Format.delete_all()
 Author.delete_all()
 Series.delete_all()
 
@@ -88,6 +90,16 @@ series3.save()
 series4 = Series.new({"name" => "Mistborn"})
 series4.save()
 
+paperback = Format.new({"name" => "Paperback"})
+paperback.save()
+hardcover = Format.new({"name" => "Hard Cover"})
+hardcover.save()
+ebook = Format.new({"name" => "eBook"})
+ebook.save()
+undecided = Format.new({"name" => "Undecided"})
+undecided.save()
+
+
 notstarted = ReadStatus.find_by_name("Not started")
 finished = ReadStatus.find_by_name("Finished")
 inprogress = ReadStatus.find_by_name("In progress")
@@ -95,6 +107,8 @@ abandoned = ReadStatus.find_by_name("Abandoned")
 
 bookshelf = OwnershipStatus.find_by_name("Bookshelf")
 wishlist = OwnershipStatus.find_by_name("Wishlist")
+
+
 
 ####BOOK SEEDS
 book1 = Book.new({
@@ -104,7 +118,8 @@ book1 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series2.id(),
-  "series_number" => 1
+  "series_number" => 1,
+  "format_id" => paperback.id()
   })
 book1.save()
 book2 = Book.new({
@@ -112,7 +127,8 @@ book2 = Book.new({
   "author_id" => markuszusak.id(),
   "genre_id" => historicalfiction.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book2.save()
 book3 = Book.new({
@@ -120,7 +136,8 @@ book3 = Book.new({
   "author_id" => annegriffin.id(),
   "genre_id" => literaryfiction.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book3.save()
 book4 = Book.new({
@@ -128,7 +145,8 @@ book4 = Book.new({
   "author_id" => alexnorth.id(),
   "genre_id" => thriller.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book4.save()
 book5 = Book.new({
@@ -136,7 +154,8 @@ book5 = Book.new({
   "author_id" => cjtudor.id(),
   "genre_id" => horror.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book5.save()
 book6 = Book.new({
@@ -144,7 +163,8 @@ book6 = Book.new({
   "author_id" => cjtudor.id(),
   "genre_id" => horror.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book6.save()
 book7 = Book.new({
@@ -152,7 +172,8 @@ book7 = Book.new({
   "author_id" => richarddawkins.id(),
   "genre_id" => nonfiction.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book7.save()
 book8 = Book.new({
@@ -162,7 +183,8 @@ book8 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series3.id(),
-  "series_number" => 1
+  "series_number" => 1,
+  "format_id" => paperback.id()
   })
 book8.save()
 book9 = Book.new({
@@ -172,7 +194,8 @@ book9 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series1.id(),
-  "series_number" => 1
+  "series_number" => 1,
+  "format_id" => paperback.id()
   })
 book9.save()
 book10 = Book.new({
@@ -182,7 +205,8 @@ book10 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series1.id(),
-  "series_number" => 2
+  "series_number" => 2,
+  "format_id" => paperback.id()
   })
 book10.save()
 book11 = Book.new({
@@ -190,7 +214,8 @@ book11 = Book.new({
   "author_id" => lucyfoley.id(),
   "genre_id" => crime.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => wishlist.id()
+  "ownership_status_id" => wishlist.id(),
+  "format_id" => undecided.id()
   })
 book11.save()
 book12 = Book.new({
@@ -198,7 +223,8 @@ book12 = Book.new({
   "author_id" => jamessacorey.id(),
   "genre_id" => scifi.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => wishlist.id()
+  "ownership_status_id" => wishlist.id(),
+  "format_id" => undecided.id()
   })
 book12.save()
 book13 = Book.new({
@@ -208,7 +234,8 @@ book13 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series4.id(),
-  "series_number" => 1
+  "series_number" => 1,
+  "format_id" => paperback.id()
   })
 book13.save()
 book14 = Book.new({
@@ -216,7 +243,8 @@ book14 = Book.new({
   "author_id" => richarddawkins.id(),
   "genre_id" => nonfiction.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book14.save()
 book15 = Book.new({
@@ -224,7 +252,8 @@ book15 = Book.new({
   "author_id" => yuvalnoahharari.id(),
   "genre_id" => nonfiction.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book15.save()
 book16 = Book.new({
@@ -232,7 +261,8 @@ book16 = Book.new({
   "author_id" => yuvalnoahharari.id(),
   "genre_id" => nonfiction.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book16.save()
 book17 = Book.new({
@@ -240,7 +270,8 @@ book17 = Book.new({
   "author_id" => madelinemilller.id(),
   "genre_id" => fantasy.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => wishlist.id()
+  "ownership_status_id" => wishlist.id(),
+  "format_id" => undecided.id()
   })
 book17.save()
 book18 = Book.new({
@@ -248,7 +279,8 @@ book18 = Book.new({
   "author_id" => lucyfoley.id(),
   "genre_id" => crime.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book18.save()
 book19 = Book.new({
@@ -256,7 +288,8 @@ book19 = Book.new({
   "author_id" => maryshelley.id(),
   "genre_id" => classic.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book19.save()
 book20 = Book.new({
@@ -264,7 +297,8 @@ book20 = Book.new({
   "author_id" => fscottfitzgerald.id(),
   "genre_id" => classic.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book20.save()
 book21 = Book.new({
@@ -272,7 +306,8 @@ book21 = Book.new({
   "author_id" => sallyrooney.id(),
   "genre_id" => literaryfiction.id(),
   "read_status_id" => finished.id(),
-  "ownership_status_id" => bookshelf.id()
+  "ownership_status_id" => bookshelf.id(),
+  "format_id" => paperback.id()
   })
 book21.save()
 book22 = Book.new({
@@ -280,7 +315,8 @@ book22 = Book.new({
   "author_id" => alexmichaelides.id(),
   "genre_id" => thriller.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => wishlist.id()
+  "ownership_status_id" => wishlist.id(),
+  "format_id" => undecided.id()
   })
 book22.save()
 book23 = Book.new({
@@ -288,7 +324,8 @@ book23 = Book.new({
   "author_id" => jeaninecummins.id(),
   "genre_id" => literaryfiction.id(),
   "read_status_id" => notstarted.id(),
-  "ownership_status_id" => wishlist.id()
+  "ownership_status_id" => wishlist.id(),
+  "format_id" => undecided.id()
   })
 book23.save()
 book24 = Book.new({
@@ -298,7 +335,8 @@ book24 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series4.id(),
-  "series_number" => 2
+  "series_number" => 2,
+  "format_id" => paperback.id()
   })
 book24.save()
 book25 = Book.new({
@@ -308,7 +346,8 @@ book25 = Book.new({
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
   "series_id" => series4.id(),
-  "series_number" => 3
+  "series_number" => 3,
+  "format_id" => paperback.id()
   })
 book25.save()
 

@@ -1,0 +1,20 @@
+<div class = "pageview">
+  <div class = "pagecontent">
+
+    <div class="title-centered">
+      <h1>Formats</h1>
+    <form action="/formats/new" method="get">
+      <input class="btn-highlight" type="submit" value="New Format">
+    </form>
+    </div>
+
+    <% for format in @formats %>
+    <h2><%= format.name() %></h2>
+    <div class="index-buttons">
+    <a class="btn-main" href="/formats/<%= format.id() %>">View</a>
+    </div>
+    <hr />
+    <% end %>
+
+  </div>
+</div>

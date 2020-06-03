@@ -25,8 +25,14 @@
   <p><%= @book.series().name() %> (<%= @book.series_number() %>)</p>
   <% end %>
 
+  <h3>Read Status:</h3>
+  <p><%= @book.read_status().name() %></p>
+
   <h3>Ownership Status:</h3>
   <p><%= @book.ownership_status().name() %></p>
+
+  <h3>Format:</h3>
+  <p><%= @book.format().name() %></p>
 
   <h3>Tags:</h3>
   <ul>
