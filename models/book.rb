@@ -29,7 +29,7 @@ class Book
     id_array1 = array1.map{|book| book.id()}
     id_array2 = array2.map{|book| book.id()}
     new_array = id_array1 & id_array2
-    return new_array.map{|id| Book.find(id)}
+    return new_array.map{|id| Book.find(id)}.sort_by{|book| book.title()}
   end
 
   def Book.find_by_rating(rating)
