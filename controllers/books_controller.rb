@@ -76,6 +76,16 @@ get '/books/read_status/:read_status_id' do
   erb(:"books/by_read_status")
 end
 
+get '/books/format' do
+  redirect("/books/format/#{params["format_id"]}")
+end
+
+get '/books/format/:format_id' do
+  @format = Format.find(params["format_id"])
+  @books = Book.includes(Book.bookshelf(), @format.books())
+  erb(:"books/by_format")
+end
+
 get '/books/tag' do
   redirect("/books/tag/#{params["tag_id"]}")
 end

@@ -12,6 +12,7 @@ get '/gimme' do
 
   @read_authors = Gimme.read_authors()
   @read_genres = Gimme.read_genres()
+  @read_formats = Gimme.read_formats()
   @read_tags = Gimme.read_tags()
 
   @recommend_authors = Gimme.recommend_authors()
@@ -54,6 +55,12 @@ get '/gimme/read/genre' do
   book = Gimme.read_genre(params["genre_id"])
   redirect("/books/#{book.id()}")
 end
+
+get '/gimme/read/format' do
+  book = Gimme.read_format(params["format_id"])
+  redirect("/books/#{book.id()}")
+end
+
 
 get '/gimme/read/tag' do
   book = Gimme.read_tag(params["tag_id"])

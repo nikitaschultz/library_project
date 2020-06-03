@@ -107,6 +107,23 @@ class Gimme
     return genre_ids.map{|genre_id| Genre.find(genre_id)}
   end
 
+  def Gimme.read_format(format_id)
+    bookshelf = OwnershipStatus.find_by_name("Bookshelf")
+    not_started = ReadStatus.find_by_name("Not started")
+    all_books = Book.includes(bookshelf.books(), not_started.books())
+    format = Format.find(format_id)
+    books = Book.includes(all_books, format.books())
+    return books.sample()
+  end
+
+  def Gimme.read_formats()
+    bookshelf = OwnershipStatus.find_by_name("Bookshelf")
+    not_started = ReadStatus.find_by_name("Not started")
+    all_books = Book.includes(bookshelf.books(), not_started.books())
+    format_ids = all_books.map{|book| book.format().id()}.uniq()
+    return format_ids.map{|format_id| Format.find(format_id)}
+  end
+
   def Gimme.read_tag(tag_id)
     bookshelf = OwnershipStatus.find_by_name("Bookshelf")
     not_started = ReadStatus.find_by_name("Not started")

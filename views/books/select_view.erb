@@ -50,6 +50,16 @@
       <input class="btn-main" type="submit" value="View">
     </form>
 
+    <form class="view-box" action="/books/format" method="get">
+      <label class="fixed-label" for="format">Format:</label><br>
+      <select class="dropdown" id="format" name="format_id">
+        <% for format in @formats %>
+        <option id="format" value="<%= format.id() %>"><%= format.name() %></option>
+        <% end %>
+      </select>
+      <input class="btn-main" type="submit" value="View">
+    </form>
+
     <form class="view-box" action="/books/tag" method="get">
       <label class="fixed-label" for="tag">Tag:</label><br>
       <select class="dropdown" id="tag" name="tag_id">

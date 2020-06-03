@@ -146,7 +146,7 @@ book4 = Book.new({
   "genre_id" => thriller.id(),
   "read_status_id" => finished.id(),
   "ownership_status_id" => bookshelf.id(),
-  "format_id" => paperback.id()
+  "format_id" => ebook.id()
   })
 book4.save()
 book5 = Book.new({

@@ -73,6 +73,16 @@
       <input class="btn-highlight" type="submit" value="Gimme a book!">
     </form>
 
+    <form class="gimme-box" action="/gimme/read/format" method="get">
+      <label class="gimme-label" for="format">Format:</label><br>
+      <select class="dropdown" id="format" name="format_id">
+        <% for format in @read_formats %>
+        <option id="format" value="<%= format.id() %>"><%= format.name() %></option>
+        <% end %>
+      </select>
+      <input class="btn-highlight" type="submit" value="Gimme a book!">
+    </form>
+
     <form class="gimme-box" action="/gimme/read/tag" method="get">
       <label class="gimme-label" for="tag">Tag:</label><br>
       <select class="dropdown" id="tag" name="tag_id">
