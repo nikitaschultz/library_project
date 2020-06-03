@@ -1,10 +1,10 @@
 # library_project
 
-##Prerequisites:
+## Prerequisites:
 - gem install sinatra
 - gem install sinatra-contrib
 
-##Installing:
+## Installing:
 - Create a database called "library"
 - Run the file "library.sql" against your new database
   - From the project folder: (psql -d library -f db/library.sql)
@@ -15,14 +15,21 @@
 - Run app.rb
 - Open http://localhost:4567 in your browser (Chrome tested and suggested)
 
-##Testing:
+## Testing:
 - Specs files in models/specs (test initialize functions)
 - If pry gem is installed, can test using the seeds file (uncomment pry('require') and binding.pry)
 
-##Using the Application:
+## Using the Application:
 ### Bookshelf
   - This will show books you have added with an ownership_status of "Bookshelf"
-  - When selecting a "view-by" option, this will filter by the selected parameters **only** for books that are on your "Bookshelf"
+  - When selecting a "view-by" option, this will filter by the selected parameters *only* for books that are on your "Bookshelf"
 
 ### Wishlist
   - This will show all books you have added with an ownership_status of "Wishlist"
+
+### Admin
+  - You can use the admin page to customise your Authors, Genres, Formats, Series, Tags and Reviews
+  - Deleting an author, genre, format or series will delete all books marked with it
+  - When viewing a category, the books it has been applied to are listed below so you can see which books will be affected if you decide to delete or edit the name of that category
+
+  ![](public/images/Admin-Genre-Classic)
