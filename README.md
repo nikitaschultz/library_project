@@ -1,4 +1,4 @@
-# library_project
+# Book Bank
 
 ## Prerequisites:
 - gem install sinatra
